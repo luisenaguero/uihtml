@@ -1,0 +1,65 @@
+
+<a href="http://www.urbeinternacional.com/index.html#/">
+    <div id="logo" ng-controller="ctrlPortal">
+    </div>
+
+</a>
+
+<div class="container-fluid" style="background-color: #f8f8f8">
+    <div class="collapse navbar-collapse">
+
+        <div class="login" id="login">
+            <form id="frmLogin" class="navbar-form navbar-right" action="/Login/Login.do" method="post" role="form">
+                <div class="form-group">
+                    <input name="usr" type="text" class="form-control entrada" placeholder="?   Usuario">
+                    <input name="psw" type="text" class="form-control entrada" placeholder="&#xf023;   Contraseña">
+                    <button onclick="login()" type="button" class="btn btn-default">></button>
+                </div>
+            </form>
+            <div class="login-options">
+                <ul>
+                    <li><a>Registro</a></li>
+                    |
+                    <li><a>Recuperar Contraeña</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="opciones-superiores" id="opcSup">
+            <ul>
+                <li><a href="#/nosotros">NOSOTROS&nbsp;&nbsp;|</a></li>                    
+                <li><a href="">ESTUDIOS&nbsp;&nbsp;|</a></li>
+                <li><a href="">SOPORTE</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--Navbar-->
+<nav class="navbar navbar-default" style="margin-bottom: 0%;border-radius: 0%; background-color: white; position: inherit;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <!--  <a class="navbar-brand" href="#">URBE INT</a> -->
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar" style="float:right" >
+            <ul class="nav navbar-nav">
+                <li><a href="">DIPLOMADOS</a></li>
+                <li><a href="">POSTGRADO</a></li>
+                <li><a href="">UNIVERSIDAD CORPORATIVA</a></li>
+                <li><a href="#/certificacion">CERTIFICACIÓN INTERNACIONAL</a></li> 
+            </ul>
+
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control entrada" placeholder="&#xf002;    Search">
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+
