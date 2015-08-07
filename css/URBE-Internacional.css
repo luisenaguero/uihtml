@@ -48,17 +48,18 @@ body {
 
 .evento-1 {
 	margin-top: 0%;
-	margin-left: 5%;
+	margin-left: 0%;
 	margin-bottom: 0%;
 	margin-right: 0%;
 	padding: 0%;
 	color: black;
 	font-family: "Montserrat";
+	font-size: small;
 }
 
 .evento-2 {
 	margin-top: 0%;
-	margin-left: 2%;
+	margin-left: 0%;
 	margin-bottom: 0%;
 	margin-right: 0%;
 	padding: 0%;
@@ -71,7 +72,7 @@ body {
 .separador-gris {
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: #E6E6E6;
+	background-color: black;
 	border-radius: 0%;
 	width: 100%;
 	height: 0%;
@@ -176,14 +177,46 @@ body {
 	color: #f8623f;
 	font-color: #FFFFFF;
 }
-
+.noticias-left-bg {
+	border-width: 1px;
+	padding: 0%;
+	padding-left: 3.5%;
+	align-items: center;
+	background-color: #000000;
+	margin-left: 4.5%;
+}
+.noticias-left-bg-2 {
+	border-width: 1px;
+	padding: 0%;
+	padding-left: 3.5%;
+	align-items: center;
+	background-color: #b2b2b2;
+	margin-left: 4.5%;
+}
+.noticias-left-bg-video {
+	border-width: 1px;
+	padding: 0%;
+	padding-left: 3.5%;
+	align-items: center;
+	background-color: #000000;
+	margin-left: 4.5%;
+}
+.noticias-left-text {
+	font-family: "Montserrat";
+	color: #FFFFFF;
+	text-align: justify;
+	font-size: 14px;
+	padding-left: 0%;
+	padding-right: 5%;
+	padding-top: 3%;
+	padding-bottom: 0%;
+}
 .noticia-bg-negro {
 	font-family: "Montserrat";
 	color: #2587e8;
 	margin-top: 0.8%;
 	margin-bottom: 0%;
 	margin-left: 14%;
-
 }
 
 .noticia-bg-negro-info {
@@ -198,7 +231,6 @@ body {
 	color: #FFFFFF;
 	font-size: small;
 	margin-top: 15%;
-
 }
 
 .leer-mas-banner-vertical {
@@ -332,7 +364,7 @@ input {
     width:149px;
     position:absolute;
     margin-left: 200px;
-    background-image: url("../img/img_home/logo-interno_02.png");
+    background-image: url("../img/img_home/cinta_logo_02.png");
 }
 
 #separador{

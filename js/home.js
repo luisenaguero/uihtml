@@ -20,7 +20,7 @@ $(document).ready(function () {
         var marginLeftNav = windowSize - $(myNavbar).width();
 
         // SI EL NAVBAR SE ACERCA LE REDUZCO EL MARGINLEFT AL LOGO
-        while (marginLeftNav - espacioTotalLogo < 50) {
+        while (marginLeftNav - espacioTotalLogo < 15) {
 
             if (logoMarginLeft > 5) {
                 logoMarginLeft--;
@@ -33,7 +33,7 @@ $(document).ready(function () {
         }
 
         // SI EL NAVBAR SE ALEJA LE AUMENTO EL MARGINLEFT AL LOGO
-        while (marginLeftNav - espacioTotalLogo > 50) {
+        while (marginLeftNav - espacioTotalLogo > 15) {
 
             logoMarginLeft++;
 

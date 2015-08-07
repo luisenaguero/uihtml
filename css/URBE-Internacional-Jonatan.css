@@ -101,6 +101,40 @@ body {
 }
 
 /*
+	Etiquetas para universidad-corporativa
+*/
+
+.primeraEtiquetaCorp {
+	position: absolute; 
+	width: 189px; 
+	height: 390px; 
+	margin-left: -78px;
+    background-image: url(../img/img_universidad_corporativa/universidad-corporativa_03.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
+}
+
+.segundaEtiquetaCorp {
+	position: absolute; 
+	width: 189px; 
+	height: 390px; 
+	margin-left: -34px; 
+	background-image: url(../img/img_universidad_corporativa/universidad-corporativa_05.png); 
+	background-size: contain; 
+	background-repeat: no-repeat
+}
+
+.terceraEtiquetaCorp {
+	position: absolute; 
+	width: 189px; 
+	height: 390px; 
+	margin-left: 10px; 
+	background-image: url(../img/img_universidad_corporativa/universidad-corporativa_07.png); 
+	background-size: contain; 
+	background-repeat: no-repeat
+}
+
+/*
 	Etiquetas para modelo-educativo
 */
 .primeraEtiquetaD {
@@ -159,7 +193,10 @@ body {
 
 .parrafoEnEtiqueta {
 	color: white; 
-	text-align: left
+	text-align: left;
+	margin-left: 4%;
+	margin-top: 4%;  
+	font-size: 0.875em;
 }
 
 @media (min-width: 600px) and (max-width: 1000px){
