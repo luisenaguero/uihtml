@@ -24,7 +24,7 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
         })
         .factory('AuthSession', function ($cookies, AUTH_HEADERS) {
             var supportStorage = window.localStorage || (window.globalStorage ? globalStorage[location.hostname] : null)
-            
+
             //var token = AUTH_HEADERS.TOKEN;
 
             function storeToken(tokenKey, tokenValue) {
@@ -68,8 +68,8 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                 return !(typeof tokenizer === 'undefined' || tokenizer === null)
 //                return !!$cookies.TICKET;
             }
-            
-            function getPeopleInfo(){
+
+            function getPeopleInfo() {
                 console.log("la info  es :");
             }
 
@@ -93,14 +93,17 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                     if (AuthSession.isLogged() === true)
                     {
                         config.headers[AUTH_HEADERS.TOKEN] = AuthSession.get(AUTH_HEADERS.TOKEN);
+                        config.headers[AUTH_HEADERS.USER] = AuthSession.get(AUTH_HEADERS.USER);
                     }
                     return config;
                 },
                 response: function (response) {
                     $rootScope.$broadcast(AUTH_EVENTS.endRequest);
                     // console.log(response.headers(AUTH_HEADERS.TOKEN));
-                    if (response.headers(AUTH_HEADERS.TOKEN) !== null)
+                    if (response.headers(AUTH_HEADERS.TOKEN) !== null) {
+                        AuthSession.update(AUTH_HEADERS.USER, response.headers(AUTH_HEADERS.USER));
                         AuthSession.update(AUTH_HEADERS.TOKEN, response.headers(AUTH_HEADERS.TOKEN));
+                    }
                     return response || $q.when(response);
                 },
                 responseError: function (response) {
@@ -255,10 +258,10 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
 
             $rootScope.$on(AUTH_EVENTS.loginSuccess, function () {
 
-                if ((window.location.href.search("not-authenticated") !== - 1)
-                || (window.location.href.search("#")) === - 1) {
+                if ((window.location.href.search("not-authenticated") !== -1)
+                        || (window.location.href.search("#")) === -1) {
 
-                $state.go(AUTH_EVENTS.loginSuccess);
+                    $state.go(AUTH_EVENTS.loginSuccess);
                 }
             });
 

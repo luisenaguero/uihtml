@@ -16,7 +16,7 @@
                         <input  name="user" requiered ng-model="user" type="text" class="form-control entrada" placeholder="&#xf007;   Usuario">
                         <input name="psw" type="password" required ng-model="password" class="form-control entrada" placeholder="&#xf023;   Contraseña">
                         <button ng-click="login()" type="button" class="btn btn-default">></button>
-
+                        
                     </div>
 
                 </form>
@@ -35,9 +35,9 @@
                 <ul style="  display: flex;padding: 25px;list-style: none;">
                     <li ng-if="moodle.usDebStudent === !false">MOROSO</li>
                     <li ng-if="moodle.servers.length < 1">No Tiene EAD</li>
-                    <li ng-if="moodle.servers.length > 0"><a href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodler.servers[0].serverId}}">Tiene Estudios EAD</a></li>
+                    <li ng-if="moodle.servers.length > 0"><a href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene Estudios EAD</a></li>
                     <li style="padding-left: 20px;">{{profileData.fname}} {{profileData.lname}}</li>
-                
+                    <li><button  ng-click="logout()" type="button" class="btn btn-default">x</button></li>
                 </ul>
 
             </div>

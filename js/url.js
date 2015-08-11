@@ -3,17 +3,18 @@
  * and open the template in the editor.
  */
 var root =
-    'https://urbe-api.urbe.edu/';
-    //'http://10.50.3.5/';
-    //'http://localhost:8180/';
-    //'http://10.200.36.27:8080/';
-    //'http://10.50.2.135:8080/';
-var url = root + 
-      'urbe-api/rest/1.0/';
-       // 'urbe-api-int/rest/1.0/'
-                   
+        'https://10.50.2.135:28182/';
+// 'https://urbe-api.urbe.edu/';
+//'http://10.50.3.5/';
+//'http://localhost:8180/';
+//'http://10.200.36.27:8080/';
+//'http://10.50.2.135:8080/';
+var url = root +
+        'urbe-api-int/rest/1.0/';
+// 'urbe-api-int/rest/1.0/'
+
 var news_events_url = root + 'urbe-api-ext/rest/1.0/';
-var moodle = root + 'urbe-api-ext/rest/1.0/internacional';
+var moodle = root + 'urbe-api-ext/rest/1.0/internacional/';
 var employee_url = root + 'urbe-rrhh/rest/1.0/';
 var URL = {
     SCORE_PEOPLE_AND_PERIOD: 'score/inscription/{0}/owner?idPeriod={1}',
@@ -21,7 +22,7 @@ var URL = {
     PERIOD_STUDY_TYPE: 'period/study-type/{0}',
     PERIOD_INSCRIPTION: 'inscription/{0}/periods/owner',
     SCHEDULE_PEOPLE: 'schedule/people/{0}/owner?plusDay={1}',
-    SCHEDULE_TEACHER: 'schedule/teacher/{0}?plusDay={1}',    
+    SCHEDULE_TEACHER: 'schedule/teacher/{0}?plusDay={1}',
     PAYMENT_PEOPLE: 'payment/people/{0}/payment-status/owner',
     LOGIN: 'auth/login',
     LOGOUT: 'auth/logout',
@@ -41,8 +42,8 @@ var URL = {
     },
     EMPLOYEE_PATH: {
         VOUCHER: 'voucher/{0}/owner',
-        WORK_DAY:'check?from={0}&to={1}',
-        SCHEDULE:'check/schedule/{0}'
+        WORK_DAY: 'check?from={0}&to={1}',
+        SCHEDULE: 'check/schedule/{0}'
     },
     EAD_LINK: root + "urbe-api-ext/MoodleProxy?id={0}&server={1}"
 };

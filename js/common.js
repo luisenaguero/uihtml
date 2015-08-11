@@ -23,14 +23,14 @@ String.prototype.format = function () {
 //        decimal: ","
 //    }
 //};
-var EddieLogin = function ($http, $scope){
+var moodleVerification = function ($http, path){
   var promise;
   
   this.service = function (){
-    promise = $http.get(url+URL.LOGIN,{
-       headers: getHeader(true) 
+    promise = $http.get(path+Security.people.id,{
+       
     }).then( function (response){
-        $scope.respuesta = response.data;
+            return response;
     });
     
   };
@@ -81,7 +81,7 @@ var getStore = function ($http, path, project, authenticate) {
             }).then(function (response, status, headers, config) {
                 //$.mobile.hidePageLoadingMsg();
                 
-                   console.log(JSON.stringify(headers))
+                  
                 if (response.data.length == 0)
                     alert("No se consiguieron registro \n para visualizar");
                 return response.data;
