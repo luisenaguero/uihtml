@@ -44,9 +44,13 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                 }
             }
 
+            function clearStorage() {
+                localStorage.clear();
+            }
+
             function getUser()
             {
-                console.log(String(getToken(AUTH_HEADERS.USER)).replace(/\s/g, ''))
+                //    console.log(JSON.parse(atob(String(getToken(AUTH_HEADERS.USER)).replace(/\s/g, ''))));
                 return JSON.parse(atob(String(getToken(AUTH_HEADERS.USER)).replace(/\s/g, '')));
             }
 
@@ -80,6 +84,7 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                 remove: clearToken,
                 isLogged: isLogged,
                 getUser: getUser,
+                clearStorage: clearStorage,
                 getUserToken: getUserToken
             };
 

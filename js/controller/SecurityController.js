@@ -4,15 +4,11 @@
  */
 app.controller('SecurityController', function ($scope, $http, SecurityService, AuthSession) {
 
-
-
-
-
     console.log("AuthSession: " + AuthSession.isLogged());
     $scope.profile = AuthSession.isLogged();
 
     $scope.image = "R0lGODlhAQABAAAAACw=";
-    $scope.profileData = null;
+    $scope.profileData = $scope.profile ? AuthSession.getUser() : null;
 
     $scope.login = function () {
         if (!angular.isString($scope.user) || !angular.isString($scope.password)) {
@@ -37,27 +33,21 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
             });
         }
 
-   /*     var mudul = SecurityService.mudul();
-        mudul.service().then(function (data) {
-            alert('EPA !');
-            $scope.mudulData = data;
-
-        });*/
+        /*     var mudul = SecurityService.mudul();
+         mudul.service().then(function (data) {
+         alert('EPA !');
+         $scope.mudulData = data;
+         
+         });*/
     };
 
     $scope.logout = function () {
-        alert('logout');
-        console.log("AuthSessionUsuario :" + AuthSession.getUser());
-        // $.mobile.showPageLoadingMsg();
-
-//       Security.reset();
-        /* 
-         $scope.image = "R0lGODlhAQABAAAAACw=";
-         $scope.profile = AuthSession.isLogged();;
-         $scope.activeDesactiveLink(false);
-         $scope.user = null;
-         $scope.password = null;        
-         $.mobile.hidePageLoadingMsg(); */
+        AuthSession.clearStorage();
+        $scope.profileData = null;
+        $scope.user = null;
+        $scope.password = null;
+        $scope.profile = AuthSession.isLogged();
+        Security.reset();
     };
 
     $scope.loadImageProfile = function () {

@@ -10,13 +10,13 @@
 
         <div class="login" id="login" >
             <div class="formulario-login" ng-show="!profile">
-                <form id="frmLogin" class="navbar-form navbar-right"   >
+                <form ng-submit="login()" id="frmLogin" class="navbar-form navbar-right" novalidate>
                     <div class="form-group">
 
                         <input  name="user" requiered ng-model="user" type="text" class="form-control entrada" placeholder="&#xf007;   Usuario">
-                        <input name="psw" type="password" required ng-model="password" class="form-control entrada" placeholder="&#xf023;   Contraseña">
-                        <button ng-click="login()" type="button" class="btn btn-default">></button>
-                        
+                        <input name="psw" type="password" required ng-model="password" class="form-control entrada"
+                               placeholder="&#xf023;   Contraseña">
+                        <button type="submit" type="button" class="btn btn-default">></button>
                     </div>
 
                 </form>
@@ -29,17 +29,21 @@
                     <li><a>Recuperar Contraeña</a></li>
                 </ul>
             </div>
-            <div class="" ng-if="profile === true" ng-controller="moodleController">
+            <div style="width:398px; height: 100%;display:inline-block" ng-if="profile === true">
+                <center>
+                    <div>
+                        <button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button>
+                        <div class="logged">
+                            <ul style="  display: flex;list-style: none;">
+                                <li ng-if="moodle.usDebStudent === !false">MOROSO</li>
+                                <li ng-if="moodle.servers.length < 1">No Tiene EAD</li>
+                                <li ng-if="moodle.servers.length > 0"><a href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene Estudios EAD</a></li>
+                                <li style="margin-top: 5px;">{{profileData.fname}} {{profileData.lname}}</li>
 
-
-                <ul style="  display: flex;padding: 25px;list-style: none;">
-                    <li ng-if="moodle.usDebStudent === !false">MOROSO</li>
-                    <li ng-if="moodle.servers.length < 1">No Tiene EAD</li>
-                    <li ng-if="moodle.servers.length > 0"><a href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene Estudios EAD</a></li>
-                    <li style="padding-left: 20px;">{{profileData.fname}} {{profileData.lname}}</li>
-                    <li><button  ng-click="logout()" type="button" class="btn btn-default">x</button></li>
-                </ul>
-
+                            </ul>
+                        </div>                        
+                    </div>                   
+                </center>                
             </div>
 
         </div>

@@ -2,286 +2,306 @@ body {
     overflow-x: hidden;
     font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
     background-color: transparent;
-	text-decoration: none;
-	
+    text-decoration: none;
+
 }
 .separador-negro {
-	background-color: black;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-color: black;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 }
 .separador-rayado-blanco {
-	background-color: white;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
-	border-bottom-style: dashed;
-	border-width: 2px;
-	border-color: #E6E6E6;
+    background-color: white;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
+    border-bottom-style: dashed;
+    border-width: 2px;
+    border-color: #E6E6E6;
 }
 .separador-blanco {
-	background-color: white;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-color: white;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 }
 
 .noticias-recientes {
-	margin: 0%;
-	margin-left: -5%;
-	padding: 0%;
-	font-family: "Montserrat";
+    margin: 0%;
+    margin-left: -5%;
+    padding: 0%;
+    font-family: "Montserrat";
 
 }
 
 .ver-eventos {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 1%;
-	color: #2587e8;
-	font-family: "Montserrat";
-	text-decoration: none;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 1%;
+    color: #2587e8;
+    font-family: "Montserrat";
+    text-decoration: none;
 }
 
 .evento-1 {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: black;
-	font-family: "Montserrat";
-	font-size: small;
-	text-decoration: none;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: black;
+    font-family: "Montserrat";
+    font-size: small;
+    text-decoration: none;
 }
 
 .evento-2 {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: black;
-	font-family: "Open Sans";
-	font-size: small;
-	text-decoration: none;	
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: black;
+    font-family: "Open Sans";
+    font-size: small;
+    text-decoration: none;	
 }
 
 .separador-gris {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 
 }
 
 .separador-transparente {
-	background-color: transparent;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-color: transparent;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 }
 
 /*#bg-azul {
-	    background-image: url("img/base_azul_20.png");
+            background-image: url("img/base_azul_20.png");
 }*/
 
 .espaciado-columnas-azul {
-	padding-top: 5%;
-	padding-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .nombre-rector {
-	margin-top: -8%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Montserrat";
-	font-size: larger;
-	text-decoration: none;
+    margin-top: -8%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Montserrat";
+    font-size: larger;
+    text-decoration: none;
 }
 
 .titulo-info-noticia-azul {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Montserrat";
-	font-size: larger;
-	text-decoration: none;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Montserrat";
+    font-size: larger;
+    text-decoration: none;
 }
 
 .columna-central-azul-border {
-	border: solid;
-	border-left-color: #FFFFFF;
-	border-right-color: #FFFFFF;
-	border-top-color: transparent;
-	border-bottom-color: transparent;
-	padding-top: 0%;
-	padding-bottom: 0%;
+    border: solid;
+    border-left-color: #FFFFFF;
+    border-right-color: #FFFFFF;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    padding-top: 0%;
+    padding-bottom: 0%;
 }
 
 .info-noticia-azul {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Open Sans";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Open Sans";
 }
 
 .tipo-link {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Open Sans";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Open Sans";
 }
 
 .titulo-evento {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Montserrat";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Montserrat";
 }
 
 .evento-info {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: #FFFFFF;
-	font-family: "Open Sans";
-	font-size: smaller;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: #FFFFFF;
+    font-family: "Open Sans";
+    font-size: smaller;
 }
 
 .boton-compartir {
-	margin: 0%;
-	padding: 0%;
-	padding-top: 4%;
-	color: #f8623f;
-	font-color: #FFFFFF;
+    margin: 0%;
+    padding: 0%;
+    padding-top: 4%;
+    color: #f8623f;
+    font-color: #FFFFFF;
 }
 .noticias-left-bg {
-	border-width: 1px;
-	padding: 0%;
-	padding-left: 3.5%;
-	align-items: center;
-	background-color: #000000;
-	margin-left: 4.5%;
+    border-width: 1px;
+    padding: 0%;
+    padding-left: 3.5%;
+    align-items: center;
+    background-color: #000000;
+    margin-left: 4.5%;
 }
 .noticias-left-bg-2 {
-	border-width: 1px;
-	padding: 0%;
-	padding-left: 3.5%;
-	align-items: center;
-	background-color: #b2b2b2;
-	margin-left: 4.5%;
+    border-width: 1px;
+    padding: 0%;
+    padding-left: 3.5%;
+    align-items: center;
+    background-color: #b2b2b2;
+    margin-left: 4.5%;
 }
 .noticias-left-bg-video {
-	border-width: 1px;
-	padding: 0%;
-	padding-left: 3.5%;
-	align-items: center;
-	background-color: #000000;
-	margin-left: 4.5%;
+    border-width: 1px;
+    padding: 0%;
+    padding-left: 3.5%;
+    align-items: center;
+    background-color: #000000;
+    margin-left: 4.5%;
 }
 .noticias-left-text {
-	font-family: "Montserrat";
-	color: #FFFFFF;
-	text-align: justify;
-	font-size: 14px;
-	padding-left: 0%;
-	padding-right: 5%;
-	padding-top: 3%;
-	padding-bottom: 0%;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    text-align: justify;
+    font-size: 14px;
+    padding-left: 0%;
+    padding-right: 5%;
+    padding-top: 3%;
+    padding-bottom: 0%;
 }
 .noticia-bg-negro {
-	font-family: "Montserrat";
-	color: #2587e8;
-	margin-top: 0.8%;
-	margin-bottom: 0%;
-	margin-left: 14%;
+    font-family: "Montserrat";
+    color: #2587e8;
+    margin-top: 0.8%;
+    margin-bottom: 0%;
+    margin-left: 14%;
 }
 
 .noticia-bg-negro-info {
-	font-family: "Open Sans";
-	color: #FFFFFF;
-	font-size: smaller;
-	margin-left: 14%;
+    font-family: "Open Sans";
+    color: #FFFFFF;
+    font-size: smaller;
+    margin-left: 14%;
 }
 
 .banner-vertical-info {
-	font-family: "Montserrat";
-	color: #FFFFFF;
-	font-size: small;
-	margin-top: 15%;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-size: small;
+    margin-top: 15%;
 }
 
 .leer-mas-banner-vertical {
-	font-family: "Montserrat";
-	color: #FFFFFF;
-	font-size: 8px;
-	padding-bottom: 214%;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-size: 8px;
+    padding-bottom: 214%;
 }
 
 .tab-head {
-	font-family: "Montserrat";
-	color: #FFFFFF;
-	font-size: 12px;
-	padding: 0%;
-	margin: 0%;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 0%;
+    margin: 0%;
 }
 
 .tab-info {
-	font-family: "Montserrat";
-	color: #2587e8;
-	font-size: 10px;
-	padding: 5%;
-	padding-bottom: 2%;
-	margin: 0%;
+    font-family: "Montserrat";
+    color: #2587e8;
+    font-size: 10px;
+    padding: 5%;
+    padding-bottom: 2%;
+    margin: 0%;
 }
 
 .tab-info-date {
-	font-family: "Montserrat";
-	color: #b2b2b2;
-	font-size: 9px;
-	padding-top: 2%;
-	padding-bottom: 0%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin: 0%;
+    font-family: "Montserrat";
+    color: #b2b2b2;
+    font-size: 9px;
+    padding-top: 2%;
+    padding-bottom: 0%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 0%;
+}
+
+.logged {
+    border: 1px solid rgb(204, 204, 204);
+    width: 160px;
+    border-radius: 10px;
+    /* max-width: 450px; */
+    margin-top: 10px;
+    min-width: 160px;
+    float: right;
+    height: 44px;
+    padding-top: 8px;
+    font-size: 10px;
+    background-color: white;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: rgb(153, 153, 159);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
 }
 
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-	background-color: #2587e8 !important;	
+    background-color: #2587e8 !important;	
 }
 
 .nav-tabs>li>a>p{
-	text-align: center !important;
+    text-align: center !important;
 }
-
 .login {
     display:inline-block;
     float: right;
@@ -375,15 +395,15 @@ input {
 
 #separador{
     border-right: 7px solid;
-    
+
     border-right-color: grey;
     border: 1px solid;
 }
 
 @media (min-width: 200px) and (max-width: 1000px){
-    
+
 }
 
 a,p,a:hover{
-	text-decoration: none;
+    text-decoration: none;
 }
