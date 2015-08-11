@@ -7,6 +7,7 @@ var Security = {
     password: '',
     people: null,
     token : null,
+    tokenuser:null,
     reset:function(){
         this.user = null;
         this.password = null;

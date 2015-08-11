@@ -5,6 +5,10 @@ app.service('SecurityService', function($http) {
         Security.password = password;
         return new getStore($http, URL.LOGIN,null,true);        
     };
+    
+    this.isLogin = function (){
+        return new gestStore($http, URL.LOGIN,null,true).service();
+    };
 
     this.profileImage = function(peopleId) {
         return new getStore($http, URL.IMAGE_PEOPLE.format(peopleId));

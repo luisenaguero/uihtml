@@ -2,6 +2,8 @@ body {
     overflow-x: hidden;
     font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
     background-color: transparent;
+	text-decoration: none;
+	
 }
 .separador-negro {
 	background-color: black;
@@ -44,6 +46,7 @@ body {
 	padding: 1%;
 	color: #2587e8;
 	font-family: "Montserrat";
+	text-decoration: none;
 }
 
 .evento-1 {
@@ -55,6 +58,7 @@ body {
 	color: black;
 	font-family: "Montserrat";
 	font-size: small;
+	text-decoration: none;
 }
 
 .evento-2 {
@@ -66,7 +70,7 @@ body {
 	color: black;
 	font-family: "Open Sans";
 	font-size: small;
-
+	text-decoration: none;	
 }
 
 .separador-gris {
@@ -106,6 +110,7 @@ body {
 	color: #FFFFFF;
 	font-family: "Montserrat";
 	font-size: larger;
+	text-decoration: none;
 }
 
 .titulo-info-noticia-azul {
@@ -117,6 +122,7 @@ body {
 	color: #FFFFFF;
 	font-family: "Montserrat";
 	font-size: larger;
+	text-decoration: none;
 }
 
 .columna-central-azul-border {
@@ -376,4 +382,8 @@ input {
 
 @media (min-width: 200px) and (max-width: 1000px){
     
+}
+
+a,p,a:hover{
+	text-decoration: none;
 }

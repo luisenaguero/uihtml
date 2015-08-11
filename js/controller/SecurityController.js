@@ -11,9 +11,12 @@ app.controller('SecurityController', function($scope, $http, SecurityService, Au
     $scope.profileData = null;
 
     $scope.login = function() {
-        if (!angular.isString($scope.user) || !angular.isString($scope.password))
+        if (!angular.isString($scope.user) || !angular.isString($scope.password)){
             //showMessage("Error al escribir usuario y/o contraseña");
-              alert("Error al escribir la contraseña")  
+                console.log("usuario :"+$scope.user);
+                console.log("password :"+$scope.password);
+              alert("Error al escribir la contraseña");
+          }
         else {
             var result = SecurityService.login($scope.user, $scope.password);
             
@@ -23,7 +26,7 @@ app.controller('SecurityController', function($scope, $http, SecurityService, Au
                 $scope.profile = AuthSession.isLogged();;
                  console.log("AuthSession: "+AuthSession.isLogged());
                 $scope.activeDesactiveLink(true, data.profiles);
-
+                console.log("AuthSessionUsuario :");
                
                 $scope.loadImageProfile();
             });
@@ -31,14 +34,16 @@ app.controller('SecurityController', function($scope, $http, SecurityService, Au
     };
 
     $scope.logout = function() {
+        console.log("AuthSessionUsuario :"+AuthSession.getUser());
        // $.mobile.showPageLoadingMsg();
-        Security.reset();
+       Security.reset();
+      /* 
         $scope.image = "R0lGODlhAQABAAAAACw=";
         $scope.profile = AuthSession.isLogged();;
         $scope.activeDesactiveLink(false);
         $scope.user = null;
         $scope.password = null;        
-        $.mobile.hidePageLoadingMsg();
+        $.mobile.hidePageLoadingMsg();*/
     };
 
     $scope.loadImageProfile = function() {

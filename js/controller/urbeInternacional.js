@@ -61,16 +61,16 @@ app.config(['$routeProvider',
         }).when('/universidad-corporativa', {
             templateUrl: 'templates/universidad-corporativa.html',
             controller: 'ctrlUniversidadC'
-        }).when('/noticias-p', {
+        }).when('/noticias-evento-virtual-educa-ecuador', {
             templateUrl: 'templates/noticias-p.html',
             controller: 'ctrlNoticias'
-        }).when('/noticias-s', {
+        }).when('/noticias-evento-citiced', {
             templateUrl: 'templates/noticias-s.html',
             controller: 'ctrlNoticias'
-        }).when('/noticias-t', {
+        }).when('/noticias-info-aiesad', {
             templateUrl: 'templates/noticias-t.html',
             controller: 'ctrlNoticias'
-        }).when('/noticias-c', {
+        }).when('/noticias-info-ried', {
             templateUrl: 'templates/noticias-c.html',
             controller: 'ctrlNoticias'
         });

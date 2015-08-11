@@ -23,7 +23,21 @@ String.prototype.format = function () {
 //        decimal: ","
 //    }
 //};
-
+var EddieLogin = function ($http, $scope){
+  var promise;
+  
+  this.service = function (){
+    promise = $http.get(url+URL.LOGIN,{
+       headers: getHeader(true) 
+    }).then( function (response){
+        $scope.respuesta = response.data;
+    });
+    
+  };
+    
+    
+    
+};
 var getStore = function ($http, path, project, authenticate) {
     var promise;
    // $.mobile.showPageLoadingMsg();
@@ -66,6 +80,8 @@ var getStore = function ($http, path, project, authenticate) {
                 }
             }).then(function (response, status, headers, config) {
                 //$.mobile.hidePageLoadingMsg();
+                
+                   console.log(JSON.stringify(headers))
                 if (response.data.length == 0)
                     alert("No se consiguieron registro \n para visualizar");
                 return response.data;
@@ -210,10 +226,12 @@ function fncFormatoNumero(numero, decimales, separadorDecimal, separadorMiles) {
 ;
 
 function getHeader(authenticate) {
-    if (authenticate)
-        return {'X-Authenticate': Security.user + ':' + Security.password};
-    else
-        return {'X-Authorization': Security.token};
+    if (authenticate){
+                return {'X-Authenticate': Security.user + ':' + Security.password};
+
+    } else
+        return {'X-Authorization': Security.token,
+                    };
 }
 
 function profile() {

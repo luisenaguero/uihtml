@@ -7,8 +7,13 @@ var root =
     //'http://10.50.3.5/';
     //'http://localhost:8180/';
     //'http://10.200.36.27:8080/';
-var url = root + 'urbe-api/rest/1.0/';
+    //'http://10.50.2.135:8080/';
+var url = root + 
+      'urbe-api/rest/1.0/';
+       // 'urbe-api-int/rest/1.0/'
+                   
 var news_events_url = root + 'urbe-api-ext/rest/1.0/';
+var moodle = root + 'urbe-api-ext/rest/1.0/internacional';
 var employee_url = root + 'urbe-rrhh/rest/1.0/';
 var URL = {
     SCORE_PEOPLE_AND_PERIOD: 'score/inscription/{0}/owner?idPeriod={1}',

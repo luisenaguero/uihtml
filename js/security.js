@@ -68,6 +68,10 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                 return !(typeof tokenizer === 'undefined' || tokenizer === null)
 //                return !!$cookies.TICKET;
             }
+            
+            function getPeopleInfo(){
+                console.log("la info  es :");
+            }
 
             return {
                 get: getToken,
