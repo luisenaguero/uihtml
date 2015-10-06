@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/opt/lampp/htdocs/public/urbe-html-internacional/js/common.js</file>
-            <file>file:/opt/lampp/htdocs/public/urbe-html-internacional/js/service/SecurityService.js</file>
-            <file>file:/opt/lampp/htdocs/public/urbe-html-internacional/js/controller/SecurityController.js</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/js/controller/ctrlCuentaVerificada.js</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/templates/cuenta_verificada.html</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/js/controller/ctrlCuentaNoVerificada.js</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/js/controller/ctrlUserLogin.js</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/js/controller/ctrlValidarCuenta.js</file>
+            <file>file://10.200.36.47/ProyectosWeb/urbe-html-internacional/js/controller/estadoRegistro.js</file>
         </group>
     </open-files>
 </project-private>

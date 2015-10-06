@@ -23,7 +23,7 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
             USER: 'TOKENUSER'
         })
         .factory('AuthSession', function ($cookies, AUTH_HEADERS) {
-            var supportStorage = window.localStorage || (window.globalStorage ? globalStorage[location.hostname] : null)
+            var supportStorage = window.localStorage || (window.globalStorage ? globalStorage[location.hostname] : null);
 
             //var token = AUTH_HEADERS.TOKEN;
 
@@ -69,12 +69,12 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
             function isLogged()
             {
                 var tokenizer = getToken(AUTH_HEADERS.TOKEN);
-                return !(typeof tokenizer === 'undefined' || tokenizer === null)
+                return !(typeof tokenizer === 'undefined' || tokenizer === null);
 //                return !!$cookies.TICKET;
             }
 
             function getPeopleInfo() {
-                console.log("la info  es :");
+                //console.log("la info  es :");
             }
 
             return {
@@ -105,7 +105,7 @@ var security = angular.module('security.authorization', ['ui.router', 'ngCookies
                 response: function (response) {
                     $rootScope.$broadcast(AUTH_EVENTS.endRequest);
                     // console.log(response.headers(AUTH_HEADERS.TOKEN));
-                    if (response.headers(AUTH_HEADERS.TOKEN) !== null) {
+                    if (response.headers(AUTH_HEADERS.TOKEN) !== null && response.headers(AUTH_HEADERS.USER) !== null) {
                         AuthSession.update(AUTH_HEADERS.USER, response.headers(AUTH_HEADERS.USER));
                         AuthSession.update(AUTH_HEADERS.TOKEN, response.headers(AUTH_HEADERS.TOKEN));
                     }

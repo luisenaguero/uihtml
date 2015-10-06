@@ -1,0 +1,108 @@
+<md-dialog aria-label="Mango (Fruit)" style="height: 75%; width: 50%;">
+    <form name="perfilForm" style="padding:3%;" ng-submit="update()">
+        <div layout layout="row" style="margin: 5px">
+            <div layout layout="column" flex="100">
+                <span flex></span><h2><strong>Edita tu Perfil</strong></h2><span flex></span>  
+            </div>
+        </div>
+        <div layout layout="row" style="margin: 5px; margin-bottom: 3%">
+            <div layout layout="column" flex="100">
+                <h4><strong>Datos Básicos</strong></h4>  
+            </div>
+        </div>
+        <div id="pContent">
+            <div layout layout="row" style="margin: 5px">
+                <div layout layout="column" flex="60">
+                    <h5>Nombre Completo</h5>  
+                </div>
+                <div layout layout="column" flex="40">
+                    <span style="width:100%;" align="right"><h5>{{persona.primerNombre}} {{persona.segundoNombre}} {{persona.primerApellido}} {{persona.segundoApellido}}</h5></span>  
+                </div>
+            </div>
+            <md-divider style="margin-bottom: 4%"></md-divider>
+            <div layout layout="row" style="margin: 5px;">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <div layout layout="column" flex="60">
+                        <h5>Correo Electronico</h5>  
+                    </div>
+                    <div layout layout="column" flex="40">
+                        <span style="width:100%;" align="right"><h5>{{persona.correoPrimario}}</h5></span>  
+                    </div>
+                </div>
+            </div>
+            <md-divider></md-divider>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Telefono Móvil</label>
+                        <input type="text" name="ntelefonoM" ng-model="persona.telefonoMovil" type="email" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/">
+                        <div ng-messages="perfilForm.ntelefonoM.$error">
+                            <div ng-message="pattern">Algo esta mal</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Pasaporte</label>
+                        <input type="text" name="pasaporte" ng-model="persona.pasaporte" ng-minlength="10" ng-maxlength="25">
+                        <div ng-messages="perfilForm.pasaporte.$error">
+                            <div ng-message="pattern">Algo esta mal</div>
+                        </div>
+                    </md-input-container> 
+                </div>
+            </div>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Documento de Identificacion</label>
+                        <input ng-model="persona.email">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout layout="row">
+                <div layout layout="column" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Sexo</label>
+                        <md-select ng-model="persona.sexo">
+                            <md-option ng-repeat="sexo in sexos" value="{{sexo.valor}}">{{sexo.nombre}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Teléfono de Habitación</label>
+                        <input name="ntelefonoH" ng-model="persona.telefonoHabitacion" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/">
+                        <div ng-messages="perfilForm.ntelefonoH.$error">
+                            <div ng-message="pattern">Algo esta mal</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Correo Secundario</label>
+                        <input ng-model="persona.correoSecundario" type="email">
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout layout="row">
+                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Estado Civil</label>
+                        <md-select ng-model="persona.estadoCivil.id">
+                            <md-option ng-repeat="estado in estados" value="{{estado.id}}">{{estado.estadoCivil}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+        <div layout layout="row" style="margin-top: 3%">
+            <span flex></span><md-button ng-click="update()" style="background-color: #1a4572" class="md-raised md-primary" type="submit">Guardar Cambios</md-button><span flex></span>
+        </div>
+    </form>
+</md-dialog>

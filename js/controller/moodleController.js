@@ -18,21 +18,7 @@ app.controller('moodleController',
 
                     });
 
-            $scope.logout = function () {
-                alert('logout');
-                
-                //    console.log("AuthSessionUsuario :"+AuthSession.getUser());
-                // $.mobile.showPageLoadingMsg();
-
-//       Security.reset();
-                /* 
-                 $scope.image = "R0lGODlhAQABAAAAACw=";
-                 $scope.profile = AuthSession.isLogged();;
-                 $scope.activeDesactiveLink(false);
-                 $scope.user = null;
-                 $scope.password = null;        
-                 $.mobile.hidePageLoadingMsg();*/
-            };
+            
 
 
         });

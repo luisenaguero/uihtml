@@ -1,0 +1,19 @@
+.nopeDetalle {
+    color: rgb(128,128,128);
+    background-color: rgb(242,242,242);
+}
+
+.yupDetalle {
+    background-color: rgb(26,69,114);
+    color:rgb(255,255,255);
+}
+
+.nopeMateria {
+    color: rgb(128,128,128);
+    background-color: rgb(242,242,242);
+}
+
+.yupMateria {
+    background-color: rgb(230,230,230);
+    color:black;
+}

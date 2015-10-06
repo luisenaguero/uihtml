@@ -2,44 +2,90 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('SecurityController', function ($scope, $http, SecurityService, AuthSession) {
+app.controller('SecurityController', function ($scope, $http, SecurityService, AuthSession, $mdDialog, userLogin,$rootScope) {
 
-    console.log("AuthSession: " + AuthSession.isLogged());
     $scope.profile = AuthSession.isLogged();
-
+    //console.log("AuthSession: " + $scope.profile);
     $scope.image = "R0lGODlhAQABAAAAACw=";
+
+    $scope.moodleScope = function () {
+
+        SecurityService.mudul(Security.people.id).service().then(function (data) {
+
+            $scope.moodleData = data;
+
+        });
+    };
+
     $scope.profileData = $scope.profile ? AuthSession.getUser() : null;
+    Security.people = $scope.profile ? AuthSession.getUser() : null;
+    $scope.moodleData = $scope.profile ? $scope.moodleScope() : null;
+//    console.log($scope.profileData);
 
     $scope.login = function () {
+
         if (!angular.isString($scope.user) || !angular.isString($scope.password)) {
             //showMessage("Error al escribir usuario y/o contraseña");
-            console.log("usuario :" + $scope.user);
-            console.log("password :" + $scope.password);
+            //console.log("usuario :" + $scope.user); 
+            //console.log("password :" + $scope.password);
             alert("Error al escribir la contraseña");
         }
         else {
-            var result = SecurityService.login($scope.user, $scope.password);
+            //by Eddie Master
+            userLogin.servicio($scope.user, $scope.password).ejecutar(function (success) {
+                
+//                switch (success.correoVerificado) {
+//                    case true:
+//                        console.log("es verdadero");
+                        Security.people = success;
+                        $scope.profileData = success;
+                        Security.session = AuthSession.isLogged();
+                        $scope.profile = AuthSession.isLogged();
+//                        break;
+//                    case false:
+//                        console.log("Correo no verificado");
+//                        $rootScope.global = success;
+//                        $scope.showMailVer();
+//                        AuthSession.clearStorage();
+//                        break;
+//                }
 
-            result.service().then(function (data) {
-                $scope.profileData = data;
-                Security.people = data;
-                $scope.profile = AuthSession.isLogged();
-                ;
-                console.log("AuthSession: " + AuthSession.isLogged());
-                $scope.activeDesactiveLink(true, data.profiles);
-                console.log("AuthSessionUsuario :");
-
-                $scope.loadImageProfile();
+            }, function (error) {
+                //console.log(error);
+                //console.log(error.data);
+                switch (error.status) {
+                    case 403:
+                    {
+                        switch (error.data) {
+                            case 'Authenticate information invalid.':
+                                $scope.showUserLogin();
+                                break;
+                            default:
+                                alert("Acceso Denegado");
+                                break;
+                        }
+                    }
+                }
             });
-        }
 
-        /*     var mudul = SecurityService.mudul();
-         mudul.service().then(function (data) {
-         alert('EPA !');
-         $scope.mudulData = data;
-         
-         });*/
+
+
+            /*  var result = SecurityService.login($scope.user, $scope.password);
+             
+             result.service().then(function (data) {
+             $scope.profileData = data;
+             Security.people = data;
+             $scope.profile = AuthSession.isLogged();
+             
+             //console.log("AuthSession: " + AuthSession.isLogged());
+             
+             $scope.moodleScope();
+             });*/
+
+        }
     };
+
+
 
     $scope.logout = function () {
         AuthSession.clearStorage();
@@ -165,4 +211,127 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
                     });
         }
     };
+
+    //PopUp para recuperar contraseña
+    $scope.showAdvanced = function (ev) {
+        $mdDialog.show({
+            controller: 'RecoverPasswordController',
+            templateUrl: './templates/popup/recuperar-contrasena.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        });
+    };
+
+    $scope.showUserLogin = function (ev) {
+        $mdDialog.show({
+            controller: 'userLoginController',
+            templateUrl: './templates/popup/userlogin.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true
+        });
+    };
+
+    $scope.showMailVer = function (ev) {
+        $mdDialog.show({
+            controller: 'verificarCorreo',
+            templateUrl: 'templates/cuenta_no_verificada.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true //cambiar a false al poner el template 
+        });
+    };
+//la locura de luisen
+    $(document).ready(function () {
+
+        //CAMBIO EL MARGEN DE LOS ELEMENTOS PARA DAR UN EFECTO RESPONSIVE
+
+
+
+        !function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + "://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, "script", "twitter-wjs");
+
+        var changeMargins = function () {
+
+            //TAMAÑO DE LA PANTALLA
+            var windowSize = $(window).width();
+            //MARGEN IZQUIERDO DEL DIV DEL LOGO
+            var logoMarginLeft = parseInt(($(logo).css('margin-left')).replace("px", ""));
+            //ESPACIO TOTAL OCUPADO POR EL LOGO
+            var espacioTotalLogo = $(logo).width() + logoMarginLeft;
+            //MARGEN IZQUIERDO DE LA BARRA 
+            var marginLeftNav = windowSize - $(myNavbar).width();
+
+            // SI EL NAVBAR SE ACERCA LE REDUZCO EL MARGINLEFT AL LOGO
+            while (marginLeftNav - espacioTotalLogo < 50) {
+
+                if (logoMarginLeft > 5) {
+                    logoMarginLeft--;
+                } else {
+                    break;
+                }
+
+                $(logo).css("margin-left", logoMarginLeft);
+                espacioTotalLogo = $(logo).width() + logoMarginLeft;
+            }
+
+            // SI EL NAVBAR SE ALEJA LE AUMENTO EL MARGINLEFT AL LOGO
+            while (marginLeftNav - espacioTotalLogo > 50) {
+
+                logoMarginLeft++;
+
+                $(logo).css("margin-left", logoMarginLeft);
+                espacioTotalLogo = $(logo).width() + logoMarginLeft;
+            }
+
+            // MARGIN RIGHT DE LAS OPCIONES SUPERIORES
+
+            var opcSupMarginRight = parseInt(($(opcSup).css('margin-right')).replace("px", ""));
+            var sumaTopDiv = (opcSupMarginRight + $(opcSup).width() + $(login).width());
+
+            while ((windowSize - 150 <= sumaTopDiv)
+                    || espacioTotalLogo >= windowSize - sumaTopDiv
+                    ) {
+                opcSupMarginRight--;
+                $(opcSup).css("margin-right", opcSupMarginRight);
+                sumaTopDiv = (opcSupMarginRight + $(opcSup).width() + $(login).width());
+            }
+
+            while (($(login).width() + $(opcSup).width() + opcSupMarginRight) < $(myNavbar).width()) {
+                opcSupMarginRight++;
+                $(opcSup).css("margin-right", opcSupMarginRight);
+            }
+        };
+
+        changeMargins();
+
+        $(window).resize(function () {
+
+            var windowSize = $(window).width();
+
+            if (windowSize < 1050) {
+                $("#logo").css("display", "none");
+                $("#myNavbar").css("float", "none");
+
+            } else {
+                $("#logo").css("display", "inline-block");
+                $("#myNavbar").css("float", "right");
+            }
+            changeMargins();
+        });
+    });
+
+
 });
+
+
+
+

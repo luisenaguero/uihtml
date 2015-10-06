@@ -5,21 +5,12 @@
  */
 
 
-var urlBase = "";
+
 
 app.controller('ctrlDiplomado',
         function ($scope, $http){
             
-            $(".sep1").css("height",$(".sep2").height());
            
-//            alert(tam);
-           
-//           $http.get(urlBase).success(
-//                    function (response){
-//                        
-//                        $scope.portal = response;
-//                        
-//                    });
             
             
             

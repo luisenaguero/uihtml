@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+by Eddie Master
+-->
+
+<md-dialog aria-label="Mango (Fruit)" style=" width: 50%" ng-controller="userLoginController" >
+    <form  name="rcForm">
+        <h2 style="padding: 3%; padding-bottom: 1%"><strong>Usuario y contraseña invalidos</strong></h2>
+        <h3 style="padding: 3%; padding-bottom: 1%"><strong>Iniciar session</strong></h3>
+        <div style="padding: 3%; padding-top: 0%">
+            <md-input-container>
+                <label>Correo Electronico</label>
+                <input style="width: 100%" ng-model="user" type="email" name="email" ng-required="true">
+                <div ng-messages="rcForm.email.$error">
+                    <div ng-message="required">*</div>
+                    <div ng-message="email">Debe ingresar un correo electrónico válido.</div>
+                </div> 
+            </md-input-container>
+            <md-input-container>
+                <label>Contraseña</label>
+                <input style="width: 100%" ng-model="password" type="password" name="email" ng-required="true">
+                <div ng-messages="rcForm.email.$error">
+                    <div ng-message="required">*</div>
+                    <div ng-message="email">Debe ingresar un correo electrónico válido.</div>
+                </div> 
+            </md-input-container>
+        </div>
+        <div style="padding: 3%; padding-bottom: 1%">
+            
+            <md-button ng-disabled="rcForm.$invalid" ng-click="userlogin()" style="width: 100%; height: 55px; margin: 0%; background-color: #1a4572" class="md-raised md-primary">Iniciar de Session</md-button>
+        </div>
+    </form>
+</md-dialog>

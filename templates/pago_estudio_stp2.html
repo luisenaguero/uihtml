@@ -1,0 +1,225 @@
+
+<!--Separador-Negro-->
+
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-negro">&nbsp;
+    </div>
+</div>
+
+<!--Imagen Front-->
+<section>
+    <div class="container-fluid" style="padding: 0%;margin: 0%">
+        <img class="img-responsive" src="img/img_diplomado/diplomado.png" alt="Front-URBE">
+    </div>
+</section>
+<!--Separador-rayado blanco-->
+
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-rayado-blanco">&nbsp;
+    </div>
+</div>
+<!--Separador Blanco-->
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-blanco">&nbsp;
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<section>
+    <!--Separador Blanco-->
+
+    <div class="container-fluid" style="padding: 0%;margin: 0%">
+        <div class="separador-blanco">&nbsp;
+        </div>
+
+        <div class="container-fluid " style="padding: 0%;margin: 0%">
+
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+
+                <div id="verLine2" class="col-md-1">
+                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                </div>
+
+                <div class="col-md-6" align="left">
+                    <h1>{{Estudio.estudio}}</h1>
+                    <br>
+                    <br>
+                    <div layout="row">
+                        <div layout="column" flex>
+                            <h4>Materias que inscribirá con su respectiva sección</h4>
+                        </div>
+                    </div>
+                    <div layout="row" style="background-color: #1a4572;color:white;">
+                        <div layout="column" flex="60" style="margin:8px;text-align:left;">
+                            Materias
+                        </div>
+                        <div layout="column" flex="30" style="margin:8px;" align="right">
+                            Sección
+                        </div>
+                    </div>
+                    <div layout="row" style="background-color: rgb(230,230,230);" ng-repeat="PlanEstudio in Niveles[1][0].planesEstudiosCollection">
+                        <div layout="row" style="background-color: rgb(242,242,242);padding:1px;border-bottom: 1px #d8d8d8 solid;" ng-repeat="Materia in PlanEstudio.materiasCollection" flex="100" ng-if="Materia.seleccionado === true">
+                            <div layout="column" flex="60" style="margin:8px;text-align:left;">
+                                <!--{{Materia.idMateria}} - -->{{Materia.materia}}
+                            </div>
+                            <div layout="column" flex="30" style="margin:8px;" align="right">
+                                {{Materia.idSeccionSeleccionado.seccion}}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div layout="row" >
+                        <div layout="column" flex>
+                            <h4>Monto y detalle a cancelar</h4>
+                        </div>
+                    </div>
+                    <div layout="row" style="background-color: #1a4572;color:white;" >
+                        <div layout="column" flex="50" style="margin:8px;">
+                            Concepto
+                        </div>
+                        <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                            Fecha Vencimiento Cuota
+                        </div>-->
+                        <div layout="column" flex="40" style="margin:8px;" align="right">
+                            Monto
+                        </div>
+                    </div>
+                    <div style="background-color: rgb(242,242,242);padding:1px;border-bottom: 1px #d8d8d8 solid;" layout="row" ng-repeat="cuota in THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection" >
+                        <div layout="column" flex="50" style="margin:8px;">
+                            {{cuota.concepto}}
+                        </div>
+                        <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                            {{cuota.fechaCobroPlan}}
+                        </div>-->
+                        <div layout="column" flex="40" style="margin:8px;" align="right">
+                            {{Moneda.nombreCorto}} {{cuota.montoCuota}}
+                        </div>
+                    </div>
+                    <br>
+                    <div layout="row" >
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="50" align="right" style="font-weight: bold;">
+                            <h4>Monto Total</h4>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <div layout="row" >
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="20" align="right" style="margin:8px;background-color: rgb(26,69,114);color:white;">
+                            <h4>{{getTotal()}}</h4>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <div layout="row" >
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="50" align="left" style="font-weight: bold;">
+                            <h4>Información de la Tarjeta</h4>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <div layout="row">
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="80" align="center">
+                            <div layout="row">
+                                <div layout="column" flex="50">
+                                    <div class="form-group">
+                                        <label>Primer Nombre</label>
+                                        <input ng-model="payInfo.fist_name">
+                                    </div>
+                                </div>
+                                <div layout="column" flex="50">
+                                    <div class="form-group">
+                                        <label>Primer Apellido</label>
+                                        <input ng-model="payInfo.last_name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <div class="form-group">
+                                    <label for="">Tipo de tarjeta de Crédito</label>
+                                    <select ng-model="payInfo.type" class="form-control" >
+                                        <option value="visa" selected>Visa</option>
+                                        <option value="master">MasterCard</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <div class="form-group">
+                                    <label>Número de tarjeta (Sin guiones ni espacios)</label>
+                                    <input ng-model="payInfo.number">
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <div layout="column" flex="50">
+                                    <div class="form-group">
+                                        <label for="">Año de Vencimiento</label>
+                                        <select class="form-control" ng-model="payInfo.expire_year">
+                                            <option value="2015" selected>2015</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div layout="column" flex="50">
+                                    <div class="form-group">
+                                        <label for="">Mes de Vencimiento</label>
+                                        <select class="form-control" ng-model="payInfo.expire_month">
+                                            <option value="01" selected>1</option>
+                                            <option value="02">2</option>
+                                            <option value="03">3</option>
+                                            <option value="04">4</option>
+                                            <option value="05">5</option>
+                                            <option value="06">6</option>
+                                            <option value="07">7</option>
+                                            <option value="08">8</option>
+                                            <option value="09">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div layout="row">
+                                <md-input-container flex>
+                                    <label>Últimos 3 dígitos en el reverso</label>
+                                    <input ng-model="payInfo.cvv2">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <div layout="row">
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="40" align="center">
+                            <md-button class="md-raised" style="background-color:#1a4572;color:white;" ng-click="finish()">Inscribirse</md-button>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <br>
+                </div>
+                <div id="verLine2" class="col-md-1">
+                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                </div>
+
+                <div class="col-md-2" align="center">
+                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+

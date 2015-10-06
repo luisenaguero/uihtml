@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+by Eddie Master
+-->
+<md-dialog aria-label="Mango (Fruit)" style="height: 40%; width: 50%">
+            <div layout layout="row" style="padding: 3%; padding-bottom: 1%">
+                <div layout layout="column" flex="60">
+                    <h4><strong>Cambio de Contraseña</strong></h4>  
+                </div>
+            </div>
+            <div id="pContent">
+                <div layout layout="row" style="padding: 0%; padding-right: 3%; padding-left: 3%">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Codigo enviado al Correo-E</label>
+                        <input style="width: 100%" ng-model="codigo" type="txt" name="email" ng-required="true">
+                        <div ng-messages="rcForm.email.$error">
+                            <div ng-message="required">*</div>
+                            <div ng-message="email">Debe ingresar un codigo válido.</div>
+                        </div> 
+                    </md-input-container>
+                </div>
+                <div layout layout="row" style="padding: 0%; padding-right: 3%; padding-left: 3%">
+                    <md-input-container style="width:100%; padding: 1%">
+                        <label>Contraseña Nueva</label>
+                        <input style="width: 100%" ng-model="email" type="email" name="email" ng-required="true">
+                        <div ng-messages="rcForm.email.$error">
+                            <div ng-message="required">*</div>
+                            <div ng-message="email">Debe ingresar un correo electrónico válido.</div>
+                        </div> 
+                    </md-input-container>
+                </div>
+                <div layout layout="row" style="padding: 0%; padding-right: 3%; padding-left: 3%">
+                    <md-input-container style="width:100%; padding: 1%; padding-bottom: 4%">
+                        <label>Confirmar Contraseña Nueva</label>
+                        <input style="width: 100%" ng-model="email" type="email" name="email" ng-required="true">
+                        <div ng-messages="rcForm.email.$error">
+                            <div ng-message="required">*</div>
+                            <div ng-message="email">Debe ingresar un correo electrónico válido.</div>
+                        </div> 
+                    </md-input-container>
+                </div>
+                <div layout layout="row" style="padding: 3%">
+                    <md-button ng-disabled="rcForm.$invalid" style="width: 100%; height: 55px; margin: 0%; background-color: #1a4572" class="md-raised md-primary">Enviar</md-button>
+                </div>
+            </div>
+</md-dialog>

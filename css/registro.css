@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 27, 2015, 9:39:08 AM
+    Author     : gerardo
+*/
+
+.formulario label{
+    color: #fff;
+
+}
+
+.formulario input{
+    border-color: #fff;
+
+    color: #fff;
+}
+
+#select_value_label_0{
+    color:#fff;
+    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    border-color: #fff;
+}
+
+md-input-container label:not(.md-no-float){
+    padding-left: 0px;
+}
+
+md-input-container:not(.md-input-invalid).md-input-has-value label{
+    color: rgba(63,81,181,1);
+}
+
+#select_value_label_1{
+    
+    color:#fff;
+    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    border-color: #fff;
+}
+
+
+#select_value_label_2{
+    
+    color:#fff;
+    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    border-color: #fff;
+}
+
+
+#select_value_label_3{
+    
+    color:#fff;
+    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    border-color: #fff;
+}
+
+.cuerpo_registro{
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+.titulo_registro{
+    font-size: 15px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    /*font-stretch:;*/
+}
+
+md-checkbox{
+    margin: 0px;
+}
+.checkbox label{
+    margin-left: 0px;
+}
+
+.error{
+    color: rgb(225, 63, 52);
+}

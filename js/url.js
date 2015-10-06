@@ -2,15 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-var root =
-        'https://10.50.2.135:28182/';
+var root = 'https://api.urbeinternacional.com:8181/';
 // 'https://urbe-api.urbe.edu/';
 //'http://10.50.3.5/';
 //'http://localhost:8180/';
 //'http://10.200.36.27:8080/';
 //'http://10.50.2.135:8080/';
-var url = root +
-        'urbe-api-int/rest/1.0/';
+var url = root + 'urbe-int-api/rest/1.0/';
 // 'urbe-api-int/rest/1.0/'
 
 var news_events_url = root + 'urbe-api-ext/rest/1.0/';
@@ -24,7 +22,7 @@ var URL = {
     SCHEDULE_PEOPLE: 'schedule/people/{0}/owner?plusDay={1}',
     SCHEDULE_TEACHER: 'schedule/teacher/{0}?plusDay={1}',
     PAYMENT_PEOPLE: 'payment/people/{0}/payment-status/owner',
-    LOGIN: 'auth/login',
+    LOGIN: 'auth/loginInter',
     LOGOUT: 'auth/logout',
     INSCRIPTION_ACADEMIC_RECORD: 'inscription/{0}/academic-record/owner',
     IMAGE_PEOPLE: 'people/{0}/photo/owner',
@@ -34,6 +32,7 @@ var URL = {
     SCHOOL_FACULTY: 'faculty/{0}/school',
     STUDY_SCHOOL: 'faculty/school/{0}/study',
     SUBJECT_STUDY: 'subject/study/{0}',
+    MOODLE_INT: root + 'urbe-api-ext/rest/1.0/internacional/',
     NEWS_EVENTS_PATH: {
         NEWS: 'information/news',
         EVENTS: 'information/events',
@@ -47,3 +46,23 @@ var URL = {
     },
     EAD_LINK: root + "urbe-api-ext/MoodleProxy?id={0}&server={1}"
 };
+
+// Nuevas URL 
+
+var dir = {
+  PERSONA:url+'people/',
+  REGISTRO_PERSONA:url+'people/newPeopleInter',
+  MODIFICAR_PERSONA:url+'people/updatePeople',
+  DATOS_PERSONALES:url+'people/list',
+  LOG:{
+      IN:url+'auth/loginInter'
+  },
+  CUENTA:{
+    VERIFICAR:url+'people/verifyEmail',
+    REENVIARCODIGO:url+'people/sendCode'
+  },
+  EDIT_PROFILE: url+'people/'
+};
+
+
+

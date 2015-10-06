@@ -1,51 +1,55 @@
-
-<a href="http://www.urbeinternacional.com/index.html#/">
-    <div id="logo" ng-controller="ctrlPortal">
+<a href="#/">
+    <div id="logo" >
     </div>
-
 </a>
 
-<div class="container-fluid" style="background-color: #f8f8f8" ng-controller="SecurityController">
-    <div class="collapse navbar-collapse">
+<div class="container-fluid" ng-controller="SecurityController" >
 
+    <div class="collapse navbar-collapse">
         <div class="login" id="login" >
             <div class="formulario-login" ng-show="!profile">
                 <form ng-submit="login()" id="frmLogin" class="navbar-form navbar-right" novalidate>
                     <div class="form-group">
-
-                        <input  name="user" requiered ng-model="user" type="text" class="form-control entrada" placeholder="&#xf007;   Usuario">
+                        <input  name="user" requiered ng-model="user" type="text" class="mainLoginInput form-control entrada" placeholder="&#xf007;   Usuario">
                         <input name="psw" type="password" required ng-model="password" class="form-control entrada"
                                placeholder="&#xf023;   Contraseña">
-                        <button type="submit" type="button" class="btn btn-default">></button>
+                        <button type="submit" class="btn btn-default">></button>
                     </div>
-
                 </form>
-
             </div>
             <div class="login-options" ng-show="!profile" >
                 <ul>
-                    <li ng-click="logout()"><a>Registro</a></li>
+                    <li><a ng-href="#/registro">Registro</a></li>
                     |
-                    <li><a>Recuperar Contraeña</a></li>
+                    <li ng-click="showAdvanced($event)"><a>Recuperar Contraeña</a></li>
                 </ul>
             </div>
             <div style="width:398px; height: 100%;display:inline-block" ng-if="profile === true">
-                <center>
-                    <div>
-                        <button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button>
-                        <div class="logged">
-                            <ul style="  display: flex;list-style: none;">
-                                <li ng-if="moodle.usDebStudent === !false">MOROSO</li>
-                                <li ng-if="moodle.servers.length < 1">No Tiene EAD</li>
-                                <li ng-if="moodle.servers.length > 0"><a href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene Estudios EAD</a></li>
-                                <li style="margin-top: 5px;">{{profileData.fname}} {{profileData.lname}}</li>
-
-                            </ul>
-                        </div>                        
-                    </div>                   
-                </center>                
+                <!--                <center>
+                                    <div>
+                                        <button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button>
+                                        <a style="float:right; margin-left:10px;margin-top: 15px;" ng-href="#/perfil" class="btn btn-default">Ver Perfil</a>
+                                        <div class="logged">
+                                            <span style="margin-top: 5px;">{{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</span>
+                                        </div>
+                                    </div>  
+                                </center>                -->
+                <a ng-href="#/inicio.html"><button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button></a>
+                <a ng-href="#/perfil">
+                    <div class="logged">
+                        <h5 style="margin-top: 6%;"><i style="margin-right: 1%; margin-left: 1%" class="fa fa-user"></i>   {{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</h5>                
+                    </div>
+                </a>
             </div>
 
+            <div class="ead" >
+                <a ng-if="moodleData.servers.length > 0"href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene EAD</a>
+                <span ng-if="moodleData.servers.length < 1">No tiene EAD</span>
+
+            </div>
+            <div class="ead-m">
+                <span ng-if="moodleData.isDebStudent === !false">Cuota Pendiente</span>
+            </div>
         </div>
 
 
@@ -60,8 +64,8 @@
 </div>
 
 <!--Navbar-->
-<nav class="navbar navbar-default" style="margin-bottom: 0%;border-radius: 0%; background-color: white; position: inherit;">
-    <div class="container-fluid">
+<nav class="navbar navbar-default" style="margin-bottom: 0%;border-radius: 0%; background-color: white;position: inherit;border-color: none;border: none;">
+    <div class="container-fluid" style="background-color: #1a4572;padding: -1%;margin: 0%;">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
@@ -72,10 +76,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar" style="float:right" >
             <ul class="nav navbar-nav">
-                <li><a href="#/diplomado">DIPLOMADOS</a></li>
-                <li><a href="#/postgrado">POSTGRADO</a></li>
-                <li><a href="#/universidad-corporativa">UNIVERSIDAD CORPORATIVA</a></li>
-                <li><a href="#/certificacion">CERTIFICACIÓN INTERNACIONAL</a></li> 
+                <li><a href="#/formacion-personal"><p class="header-options-2">FORMACIÓN PERSONAL</p></a></li>
+                <li><a href="#/postgrado"><p class="header-options-2">POSTGRADO</p></a></li>
+                <li><a href="#/universidad-corporativa"><p class="header-options-2">UNIVERSIDAD CORPORATIVA</p></a></li>
+                <li><a href="#/certificacion"><p class="header-options-2">CERTIFICACIÓN INTERNACIONAL</p></a></li> 
             </ul>
 
             <form class="navbar-form navbar-right" role="search">

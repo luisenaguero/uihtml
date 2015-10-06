@@ -23,24 +23,26 @@ String.prototype.format = function () {
 //        decimal: ","
 //    }
 //};
-var moodleVerification = function ($http, path){
-  var promise;
-  
-  this.service = function (){
-    promise = $http.get(path+Security.people.id,{
-       
-    }).then( function (response){
-            return response;
-    });
+var moodleVerification = function ($http, path, persona) {
+    var promise;
     
-  };
-    
-    
-    
+    this.service = function () {
+          
+        promise = $http.get(path + persona).then(
+                function (response) {
+                    
+                    return response.data;
+
+                });
+        return  promise;
+    };
+
+
+
 };
 var getStore = function ($http, path, project, authenticate) {
     var promise;
-   // $.mobile.showPageLoadingMsg();
+    // $.mobile.showPageLoadingMsg();
     this.service = function () {
         if (!promise) {
             promise = $http.get((!project ? url : project) + path, {
@@ -72,7 +74,7 @@ var getStore = function ($http, path, project, authenticate) {
                     case 500:
                         alert("Ha ocurrido un error inesperado en el servidor. Intente mas tarde.");
                         break;
-                    default : 
+                    default :
                         console.log("Status response: {0} -\n Message Response: {1}" +
                                 " - ".
                                 format(status, data));
@@ -80,8 +82,8 @@ var getStore = function ($http, path, project, authenticate) {
                 }
             }).then(function (response, status, headers, config) {
                 //$.mobile.hidePageLoadingMsg();
-                
-                  
+
+
                 if (response.data.length == 0)
                     alert("No se consiguieron registro \n para visualizar");
                 return response.data;
@@ -226,13 +228,18 @@ function fncFormatoNumero(numero, decimales, separadorDecimal, separadorMiles) {
 ;
 
 function getHeader(authenticate) {
-    if (authenticate){
-                return {'X-Authenticate': Security.user + ':' + Security.password};
+    if (authenticate) {
+        return {'X-Authenticate': Security.user + ':' + Security.password};
 
     } else
         return {'X-Authorization': Security.token,
-                    };
+        };
 }
+
+function getHeaderMAster(user,pass){
+    return {'X-Authenticate': user + ':' + pass};
+}
+
 
 function profile() {
     $('#profile').panel('open');

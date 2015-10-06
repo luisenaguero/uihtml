@@ -6,8 +6,9 @@ app.service('SecurityService', function ($http) {
         return new getStore($http, URL.LOGIN, null, true);
     };
 
-    this.mudul = function(){
-       return new moodleVerification($http, url.moodle);
+    this.mudul = function(persona){
+       
+       return new moodleVerification($http, URL.MOODLE_INT,persona);
     }
 
     this.profileImage = function (peopleId) {

@@ -1,0 +1,51 @@
+<md-dialog aria-label="Mango (Fruit)" style="width: 53%" >
+      <div class="row">
+                    <div class="col-lg-12" style="padding-top: 3%;">
+                        <div class="row">
+                            <div class="container-fluid">
+                                <p class="verificacion-head">Parece que tu cuenta no ha sido verificada todavia.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid">
+                                <p class="verificacion-texto">Cuando te registraste por primera vez se envio un link personalizado especificamente para ti, 
+                                    para que pudiesemos confirmar que tu eres el dueño de la cuenta de correo:
+                                </p>
+                                <div class="row" style="padding-bottom: 1%;padding-left: 0%;margin-left: -2.3%;">
+                                    <div class="col-lg-1" style="width: 8%;margin-left: 0%;">
+                                        <i class="fa fa-envelope-o fa-3x"></i>
+                                    </div>
+                                    <div class="col-lg-11" style="margin-top: 0.85%;">
+                                        <h3>{{correo}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid">
+                                <p class="verificacion-texto">Esto fue hecho por tu seguridad y solo necesita realizarse una vez.Estas viendo este mensaje
+                                    porque aun no has cliqueado en el link. El email original quizas haya aterrizado en tu carpeta de Spam, Junk Mail,
+                                    Correo no Deseado o quizas haya sido filtrado por tu sistema de correo.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid" style="margin-top: 10px;border-color: lightgray;border-style: solid;border-width: 1px;border-bottom: none;border-left: none;border-right: none;">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid" style="margin-bottom: 3%;">
+                                <p class="verificacion-texto">Para completar la activacion de tu cuenta por favor haz click<button type="button" ng-click="enviarCodigo()" class="btn btn-default" style="background-color: #0071BC;color: #FFF;border: none;border-radius: 5px;margin-left: 1%;margin-right:1%;">
+                                        AQUÍ</button>para recibir un nuevo link enviado a <strong>{{correo}}</strong>
+                                    Por favor revise su bandeja de correos para encontrar un mensaje de nosotros. Una vez
+                                    que haya cliqueado en el link de verificacion podra continuar con su inicio de sesion.
+                                </p>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+</md-dialog>
+
+
+

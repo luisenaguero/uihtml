@@ -1,0 +1,195 @@
+
+<!--Separador-Negro-->
+
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-negro">&nbsp;
+    </div>
+</div>
+
+<!--Imagen Front-->
+<section>
+    <div class="container-fluid" style="padding: 0%;margin: 0%">
+        <img class="img-responsive" src="img/img_diplomado/diplomado.png" alt="Front-URBE">
+    </div>
+</section>
+<!--Separador-rayado blanco-->
+
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-rayado-blanco">&nbsp;
+    </div>
+</div>
+<!--Separador Blanco-->
+<div class="container-fluid" style="padding: 0%;margin: 0%">
+    <div class="separador-blanco">&nbsp;
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<section>
+    <!--Separador Blanco-->
+    <div class="container-fluid" style="padding: 0%;margin: 0%">
+        <div class="separador-blanco">&nbsp;
+        </div>
+
+        <div class="container-fluid " style="padding: 0%;margin: 0%">
+
+            <div class="row">
+                <div class="col-md-3">
+
+                </div>
+
+                <div class="col-md-5" align="left">
+                    <h2>{{Estudio.estudio}}</h2>
+                    {{Estudio.objetivoGeneral}}
+
+                    <div layout="row">
+                        <!--<div layout="column" flex="40" align="left">
+                            <h5><strong>Financiamiento</strong></h5>-->
+                        <!--</div>-->
+                        <div layout="column" flex>
+
+                        </div>
+                        <div layout="column" flex="25" align="center">
+                            <br>
+                        </div>
+                    </div>
+
+                    <div layout="row">
+                        <!--<div layout="column" flex="40" align="center" class="md-whiteframe-z3">
+                            <span style="background-color: rgb(28,82,128);color:white;"><h5>Inversión Total</h5></span>
+                            <span style="background-color: rgb(26,69,114);color:white;"><h4>{{Moneda.nombreCorto}} {{getTotal()}}</h4></span>
+                        </div>-->
+                        <div layout="column" flex>
+
+                        </div>
+                        <div layout="column" flex="25" align="center" class="md-whiteframe-z3">
+                            <span style="background-color: rgb(164,26,25);color:white;"><h5>Valor UC:</h5></span>
+                            <span style="background-color: rgb(140,25,21);color:white;"><h4>{{Moneda.nombreCorto}} {{ValorUC.valorUc}}</h4></span>
+                        </div>
+                    </div>
+                    <br>
+                    <div layout="row">
+                        <div layout="column" flex>
+                            <h2><span style="background-color: rgb(140,25,21);">&nbsp;</span> {{Periodo.periodo}}</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <div layout="row" style="background-color: rgb(230,230,230);font-weight: bold;">
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            Periodo
+                        </div>
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            Duración / UC
+                        </div>
+                    </div>
+                    <div layout="row"style="background-color: rgb(242,242,242);">
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            Semestre {{Niveles[1][0].nivel}}
+                        </div>
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            {{Periodo.semanasPeriodo}} semanas / {{cantidadUc}}
+                        </div>
+                    </div>
+                    <br>
+                    <div layout="row">
+                        <div layout="column" flex>
+                            <h4>Seleccione las secciones en las que desea ver las materias</h4>
+                        </div>
+                    </div>
+                    <div layout="row" style="background-color: rgb(230,230,230);font-weight: bold;">
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            Materias
+                        </div>
+                        <div layout="column" flex="50" style="margin:8px;" align="center">
+                            Sección
+                        </div>
+                    </div>
+                    <div layout="row" style="background-color: rgb(230,230,230);" ng-repeat="PlanEstudio in Niveles[1][0].planesEstudiosCollection">
+                        <div ng-class="{yupMateria: Materia.seleccionado, nopeMateria: !Materia.seleccionado}" layout="row" style="padding:1px;border-bottom: 1px #d8d8d8 solid;" ng-repeat="Materia in PlanEstudio.materiasCollection" flex="100" valign="middle">
+                            <div layout="column" flex="5" style="margin:8px;text-align:left;">
+                                <md-checkbox md-no-ink aria-label="{{Materia.materia}}" ng-change="cambioMateria()" ng-model="Materia.seleccionado" class="md-primary" name="materia_{{$index}}" id="materia_{{$index}}" ng-if="Materia.seccionesCollection.length > 0">
+
+                                </md-checkbox>
+                            </div>
+                            <div layout="column" flex="64" style="margin:8px;text-align:left;">
+                                <!--{{Materia.idMateria}} - -->{{Materia.materia}}
+                            </div>
+                            <div layout="column" flex="20" style="margin:8px;" align="right">
+                                <select ng-model="Materia.idSeccionSeleccionado" class="form-control" ng-required="true" required="required" ng-if="Materia.seccionesCollection.length > 1" ng-options="Seccion.seccion for Seccion in Materia.seccionesCollection track by Seccion.idSeccion">
+                                </select>
+                                <span ng-if="Materia.seccionesCollection.length === 1">{{Materia.seccionesCollection[0].seccion}}</span>
+                                <span ng-if="Materia.seccionesCollection.length < 1">No disponible</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div ng-if="cantidadUc > 0">
+                        <div layout="row">
+                            <div layout="column" flex>
+                                <h4>Seleccione el monto a cancelar</h4>
+                            </div>
+                        </div>
+                        <div layout="row" class='yupMateria'>
+                            <div layout="column" flex="10" align="center" style="margin:8px;">
+
+                            </div>
+                            <div layout="column" flex="50" style="margin:8px;">
+                                Concepto
+                            </div>
+                            <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                                Fecha Vencimiento Cuota
+                            </div>-->
+                            <div layout="column" flex="20" style="margin:8px;" align="right">
+                                Monto
+                            </div>
+                        </div>
+                        <div ng-class="{yupDetalle: cuota.seleccionado, nopeDetalle: !cuota.seleccionado}" layout="row" ng-repeat="cuota in THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection" on-finish-render="ngRepeatFinished" >
+                            <div layout="column" flex="10" align="center">
+                                <md-checkbox md-no-ink aria-label="{{cuota.concepto}}" ng-change="cambioCuota($index)" ng-model="cuota.seleccionado" class="md-primary" ng-disabled="$first" name="cuota_{{$index}}" id="cuota_{{$index}}">
+
+                                </md-checkbox>
+                            </div>
+                            <div layout="column" flex="50" style="margin:8px;">
+                                {{cuota.concepto}}
+                            </div>
+                            <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                                {{cuota.fechaCobroPlan}}
+                            </div>-->
+                            <div layout="column" flex="20" style="margin:8px;" align="right">
+                                {{Moneda.nombreCorto}} {{cuota.montoCuota}}
+                            </div>
+                        </div>
+                        <div layout="row" class='yupMateria' >
+                            <div layout="column" flex="60" align="right" style="margin:8px;">
+                                Total
+                            </div>
+                            <div layout="column" flex="20" style="margin:8px;" align="right">
+                                {{Moneda.nombreCorto}} {{getTotalToPay()}}
+                            </div>
+                        </div>
+                        <br>
+                        <div layout="row">
+                            <div layout="column" flex align="right" style="margin:8px;">
+
+                            </div>
+                            <div layout="column" flex="40" style="margin:8px;" align="right">
+                                <md-button class="md-raised md-primary md-hue-2" style="width:100%" ng-click="continue()">Continuar</md-button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div id="verLine2" class="col-md-1">
+                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                </div>
+
+                <div class="col-md-3" align="center">
+                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+

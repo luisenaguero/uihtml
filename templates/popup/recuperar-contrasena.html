@@ -1,0 +1,22 @@
+<md-dialog aria-label="Mango (Fruit)" style="height: 35%; width: 50%">
+    <form ng-submit="recoverPassword()" name="rcForm">
+        <h2 style="padding: 3%; padding-bottom: 1%"><strong>Recuperar Contraseña</strong></h2>
+        <div style="padding: 3%; padding-top: 0%">
+            <md-input-container>
+                <label>Correo</label>
+                <input style="width: 100%" ng-model="email" type="email" name="email" ng-required="true">
+                <div ng-messages="rcForm.email.$error">
+                    <div ng-message="required">*</div>
+                    <div ng-message="email">Debe ingresar un correo electrónico válido.</div>
+                </div> 
+            </md-input-container>
+        </div>
+        <div style="padding: 3%; padding-bottom: 1%">
+            <md-button ng-disabled="rcForm.$invalid" style="width: 100%; height: 55px; margin: 0%; background-color: #1a4572" class="md-raised md-primary">Enviar</md-button>
+        </div
+        
+    </form>
+    <div>
+        <a style="margin-bottom: 1%; margin-left: 3%" ng-click="recoverPassword()">Ya tengo un codigo</a>
+    </div>
+</md-dialog>
