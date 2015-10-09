@@ -90,7 +90,7 @@ app.controller('ctrlPagoEstudio_stp1', function ($scope, $http, Payments, $locat
         }
     };
 
-    $scope.cambioCuota = function () {
+    $scope.cambioCuota = function (index) {
         var cuota = $scope.THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection[index];
         if (cuota.seleccionado === false) {
             for (var i = index; i < $scope.THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection.length; i++) {
@@ -121,7 +121,7 @@ app.controller('ctrlPagoEstudio_stp1', function ($scope, $http, Payments, $locat
         }
 
         var PlanesFinanciamiento = $scope.PlanesFinanciamiento;
-
+        var cont = 0;
         for (var l = 0; l < PlanesFinanciamiento.length; l++) {
             var PlanFinanciamiento = PlanesFinanciamiento[l];
             if (PlanFinanciamiento.unidadCredito === cantidad_uc) {
@@ -139,7 +139,14 @@ app.controller('ctrlPagoEstudio_stp1', function ($scope, $http, Payments, $locat
                     var DetallePlanFinanciamiento = DetallesPlanFinanciamiento[m];
                     //console.log(DetallePlanFinanciamiento.montoCuota + " - " + DetallePlanFinanciamiento.fechaCobroPlan);
                 }
+            } else {
+                cont++;
             }
+        }
+        if (cont === PlanesFinanciamiento.length) {
+            $scope.THEPlanFinanciamiento = [];
+        } else {
+            $scope.cambioCuota(1);
         }
         $scope.cantidadUc = cantidad_uc;
         //console.log($scope.cantidadUc);

@@ -3,11 +3,7 @@
  * and open the template in the editor.
  */
 var root = 'https://api.urbeinternacional.com:8181/';
-// 'https://urbe-api.urbe.edu/';
-//'http://10.50.3.5/';
-//'http://localhost:8180/';
-//'http://10.200.36.27:8080/';
-//'http://10.50.2.135:8080/';
+
 var url = root + 'urbe-int-api/rest/1.0/';
 // 'urbe-api-int/rest/1.0/'
 
@@ -54,6 +50,7 @@ var dir = {
   REGISTRO_PERSONA:url+'people/newPeopleInter',
   MODIFICAR_PERSONA:url+'people/updatePeople',
   DATOS_PERSONALES:url+'people/list',
+  DATOS_CAMBIAR_FOTO:url+'people/list',
   LOG:{
       IN:url+'auth/loginInter'
   },
@@ -61,7 +58,11 @@ var dir = {
     VERIFICAR:url+'people/verifyEmail',
     REENVIARCODIGO:url+'people/sendCode'
   },
-  EDIT_PROFILE: url+'people/'
+  EDIT_PROFILE: url+'people/',
+  ESTUDIO:{
+      PERSONA_REGISTRO_ACADEMICO:url+'payment/inscripciones/persona/',
+      PERSONA_ESTUDIO_ELEGIDO:'payment/study-all/'
+  }
 };
 
 

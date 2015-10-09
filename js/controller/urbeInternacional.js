@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-var app = angular.module('UrbeInternacional', ['ngMdIcons', 'security.authorization', 'ngMaterial', 'ngRoute', 'ngMessages', 'ngAria', 'ngResource']);
+var app = angular.module('UrbeInternacional', ['ngMdIcons', 'security.authorization', 'ngMaterial', 'ngRoute', 'ngMessages', 'ngAria', 'ngResource', 'ngLoadScript','ngStorage']);
 
 // uso de redireccionamiento con authorization comentar para pruebas
 
@@ -18,10 +18,10 @@ var app = angular.module('UrbeInternacional', ['ngMdIcons', 'security.authorizat
 //   });
 //    
 //});
-app.run(function($rootScope){
-   $rootScope.global = ""; 
-   $rootScope.user = ""; 
-   $rootScope.password = "";
+app.run(function ($rootScope) {
+    $rootScope.global = "";
+    $rootScope.user = "";
+    $rootScope.password = "";
 });
 
 app.directive('onFinishRender', function ($timeout) {
@@ -33,18 +33,6 @@ app.directive('onFinishRender', function ($timeout) {
                     scope.$emit('ngRepeatFinished');
                 });
             }
-        }
-    }
-});
-
-app.factory('Payments', function () {
-    var obj = {};
-    return {
-        setObject: function (new_Object) {
-            obj = new_Object;
-        },
-        getObject: function () {
-            return obj;
         }
     }
 });
@@ -89,6 +77,10 @@ app.config(['$routeProvider',
                 .when('/pago_estudio_stp2', {
                     templateUrl: 'templates/pago_estudio_stp2.html',
                     controller: 'ctrlPagoEstudio_stp2'
+                })
+                .when('/pago_estudio_stp3', {
+                    templateUrl: 'templates/pago_estudio_stp3.html',
+                    controller: 'ctrlPagoEstudio_stp3'
                 })
                 .when('/estudios', {
                     templateUrl: 'templates/estudios.html',
@@ -322,10 +314,10 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/cursos/gerencia-empresa.html',
                     controller: 'ctrlEstudio'
                 })
-                /*.when('/edu-sira', {
-                    templateUrl: 'templates/cursos/edu-sira.html',
+                .when('/edu-sira', {
+                    templateUrl: 'templates/cursos/educ-sira.html',
                     controller: 'ctrlEstudio'
-                })*/
+                })
                 .when('/administracion-contratos-obras-publicas-bienes-servicios', {
                     templateUrl: 'templates/cursos/adm-contra.html',
                     controller: 'ctrlEstudio'
@@ -474,7 +466,7 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/programas/formacion-invest.html',
                     controller: 'ctrlEstudio'
                 })
-                .when('/ccna-routing-and-switching', {
+                .when('/ccna-routing', {
                     templateUrl: 'templates/certificacion/ccna-routing.html',
                     controller: 'ctrlEstudio'
                 })
@@ -482,7 +474,7 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/certificacion/ccna-security.html',
                     controller: 'ctrlEstudio'
                 })
-                .when('/ccnp-switching and switching', {
+                .when('/ccnp-switching', {
                     templateUrl: 'templates/certificacion/ccnp-switching.html',
                     controller: 'ctrlEstudio'
                 })
@@ -490,7 +482,7 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/certificacion/it-essentials.html',
                     controller: 'ctrlEstudio'
                 })
-                .when('/ndg-linux-essentials', {
+                .when('/ndg', {
                     templateUrl: 'templates/certificacion/ndg.html',
                     controller: 'ctrlEstudio'
 

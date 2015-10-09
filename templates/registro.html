@@ -9,8 +9,8 @@
                 <input name="pnombre" ng-model="user.primerNombre" ng-required="true" ng-minlength="2" ng-maxlength="15" ng-pattern="/^[A-z]+$/"/>
                 <div ng-messages="userForm.primerNombre.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="minlength">Escribe más</div>
-                    <div ng-message="maxlength">Escribe menos</div>
+                    <div ng-message="minlength">El Primer Nombre debe tener al menos 2 caracteres.</div>
+                    <div ng-message="maxlength">El Primer Nombre debe tener un máximo de 15 caracteres.</div>
                     <div ng-message="pattern">Nombre invalido</div>
                 </div>
             </md-input-container>
@@ -21,8 +21,8 @@
                 <label >Segundo Nombre</label>
                 <input name="snombre" ng-model="user.segundoNombre" name="snombre" ng-minlength="2" ng-maxlength="15" ng-pattern="/^[A-z]+$/"/>
                 <div ng-messages="userForm.segundoNombre.$error">
-                    <div ng-message="minlength">Escribe más</div>
-                    <div ng-message="maxlength">Escribe menos</div>
+                    <div ng-message="minlength">El Segundo Nombre debe tener al menos 2 caracteres.</div>
+                    <div ng-message="maxlength">El Segundo Nombre debe tener un máximo de 15 caracteres.</div>
                     <div ng-message="pattern">Nombre invalido</div>
                 </div>
             </md-input-container>
@@ -34,8 +34,8 @@
                 <input name="papellido" ng-model="user.primerApellido" ng-required="true" ng-minlength="2" ng-maxlength="15" ng-pattern="/^[A-z]+$/">
                 <div ng-messages="userForm.primerApellido.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="minlength">Escribe más</div>
-                    <div ng-message="maxlength">Escribe menos</div>
+                    <div ng-message="minlength">El Primer Apellido debe tener al menos 2 caracteres.</div>
+                    <div ng-message="maxlength">El Primer Apellido debe tener un máximo de 15 caracteres.</div>
                     <div ng-message="pattern">Apellido invalido</div>
                 </div>
             </md-input-container>
@@ -46,8 +46,8 @@
                 <label>Segundo Apellido</label>
                 <input ng-model="user.segundoApellido" ng-minlength="2" ng-maxlength="15" name="segundoApellido" ng-pattern="/^[A-z]+$/">
                 <div ng-messages="userForm.segundoApellido.$error">
-                    <div ng-message="minlength">Escribe más</div>
-                    <div ng-message="maxlength">Escribe menos</div>
+                    <div ng-message="minlength">El Segundo Apellido debe tener al menos 2 caracteres.</div>
+                    <div ng-message="maxlength">El Segundo Apellido debe tener un máximo de 15 caracteres.</div>
                     <div ng-message="pattern">Apellido invalido</div>
                 </div>
             </md-input-container>
@@ -60,7 +60,7 @@
 
             <md-input-container flex="20">
                 <label>Sexo</label>
-                <md-select ng-model="user.sexo" class="registro-select">
+                <md-select ng-model="user.sexo" name="sexo" class="registro-select">
                     <md-option ng-repeat="sexo in sexos" value="{{sexo.valor}}">{{sexo.nombre}}</md-option>
                 </md-select>
             </md-input-container>
@@ -72,7 +72,7 @@
                 <input type="date" ng-model="user.fechaNacimiento" name="fechaNacimiento" ng-required="true">
                 <div ng-messages="userForm.fechaNacimiento.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="date">fecha invalida</div>
+                    <div ng-message="date">Fecha Inválida</div>
                 </div>
             </md-input-container>
 
@@ -83,7 +83,7 @@
                 <input type="tel" ng-model="user.telefonoHabitacion" name="telefonoHabitacion" ng-required="true" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/">
                 <div ng-messages="userForm.telefonoHabitacion.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="pattern">Número invalido</div>
+                    <div ng-message="pattern">Número Inválido</div>
                 </div>
             </md-input-container>
 
@@ -91,8 +91,8 @@
 
             <md-input-container flex="20">
                 <label>País</label>
-                <md-select ng-model="user.pais" name="pais" ng-required="true">
-                    <md-option ng-repeat="pais in paises" value="{{pais.valor}}">{{pais.nombre}}</md-option>
+                <md-select ng-model="user.pais" name="pais" ng-required="true" class="select-registro">
+                    <md-option ng-repeat="pais in paises" value="{{pais.id}}">{{pais.pais}}</md-option>
                 </md-select>
                 <div ng-messages="userForm.pais.$error">
                     <div ng-message="required">*</div>
@@ -111,7 +111,7 @@
                 <input  type="email" ng-model="user.correo"  name="correo" ng-required="true">
                 <div ng-messages="userForm.correo.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="email">Correo invalido</div>
+                    <div ng-message="email">Correo Inválido</div>
                 </div>
             </md-input-container>
 
@@ -122,7 +122,7 @@
                 <input  type="email" ng-model="user.ccorreo" name="ccorreo" ng-required="true">
                 <div ng-messages="userForm.ccorreo.$error">
                     <div ng-message="required">*</div>
-                    <div ng-message="email">Correo invalido</div>
+                    <div ng-message="email">Correo Inválido</div>
                 </div>
 
             </md-input-container>
@@ -156,7 +156,7 @@
                     Contraseñas cuya longitud sea como mínimo 8 caracteres.
                     Contraseñas cuya longitud máxima no debe ser arbitrariamente limitada.-->
                 </div>
-               <!-- <div ng-show="userForm.contrasena.$error.pattern">hola</div>-->
+                <!-- <div ng-show="userForm.contrasena.$error.pattern">hola</div>-->
             </md-input-container>
             <div flex></div>
         </div>

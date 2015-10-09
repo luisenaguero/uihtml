@@ -1,0 +1,26 @@
+<md-dialog aria-label="Mango (Fruit)" style="height: 55%; width: 40%">
+    <div layout layout="row" style="padding: 3%; padding-bottom: 1%; margin: 2%">
+        <div layout layout="column" flex align="center">
+            <div flex></div>
+            <h3><strong>Foto de Perfil</strong></h3>  
+            <div flex></div>
+        </div>
+    </div>
+    <div id="pContent">
+        <div layout layout="row" flex style="padding: 0%; padding-right: 3%; padding-left: 3%; margin: 2%">
+            <div flex></div>
+            <img class="img-circle" align="center" src="http://cdn.techgyd.com/funny-profile-face-optical-illusion.jpg" alt="foto-de-perfil" width="250" height="250">
+            <div flex></div>
+        </div>
+        <div layout layout="row" flex align="center" style="padding: 3%">
+            <div flex></div>
+            <div layout layout="column" style="padding: 3%; margin: 2%">
+                <label class="angular-button">
+                    <input id="user_profile_pic" type="file" name="file" accept="image/*" onchange="angular.element(this).scope().uploadPhoto(this.files)" style="display: none"/>
+                    CAMBIAR MI FOTO
+                </label>
+            </div>
+            <div flex></div>
+        </div>
+    </div>
+</md-dialog>

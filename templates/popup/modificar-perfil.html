@@ -35,7 +35,7 @@
                 <div class="pull-right" layout layout="column" layout-align="right" flex="100">
                     <md-input-container style="width:100%; padding: 1%">
                         <label>Telefono Móvil</label>
-                        <input type="text" name="ntelefonoM" ng-model="persona.telefonoMovil" type="email" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/">
+                        <input type="number" name="ntelefonoM" ng-model="persona.telefonoMovil" type="email" ng-pattern="/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/">
                         <div ng-messages="perfilForm.ntelefonoM.$error">
                             <div ng-message="pattern">Algo esta mal</div>
                         </div>
@@ -46,7 +46,7 @@
                 <div class="pull-right" layout layout="column" layout-align="right" flex="100">
                     <md-input-container style="width:100%; padding: 1%">
                         <label>Pasaporte</label>
-                        <input type="text" name="pasaporte" ng-model="persona.pasaporte" ng-minlength="10" ng-maxlength="25">
+                        <input type="number" name="pasaporte" ng-model="persona.pasaporte" ng-minlength="10" ng-maxlength="25">
                         <div ng-messages="perfilForm.pasaporte.$error">
                             <div ng-message="pattern">Algo esta mal</div>
                         </div>
@@ -57,13 +57,13 @@
                 <div class="pull-right" layout layout="column" layout-align="right" flex="100">
                     <md-input-container style="width:100%; padding: 1%">
                         <label>Documento de Identificacion</label>
-                        <input ng-model="persona.email">
+                        <input type="number" ng-model="persona.email">
                     </md-input-container>
                 </div>
             </div>
             <div layout layout="row">
                 <div layout layout="column" flex="100">
-                    <md-input-container style="width:100%; padding: 1%">
+                    <md-input-container style="width:100%; padding: 1%;">
                         <label>Sexo</label>
                         <md-select ng-model="persona.sexo">
                             <md-option ng-repeat="sexo in sexos" value="{{sexo.valor}}">{{sexo.nombre}}</md-option>
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div layout layout="row">
-                <div class="pull-right" layout layout="column" layout-align="right" flex="100">
+                <div class="selects" class="pull-right" layout layout="column" layout-align="right" flex="100">
                     <md-input-container style="width:100%; padding: 1%">
                         <label>Estado Civil</label>
                         <md-select ng-model="persona.estadoCivil.id">

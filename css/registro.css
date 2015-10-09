@@ -19,11 +19,10 @@ and open the template in the editor.
     color: #fff;
 }
 
-#select_value_label_0{
-    color:#fff;
-    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
+.select-registro{
+    color:#fff !important;
     font-weight: 700;
-    border-color: #fff;
+    border-color: #fff !important;
 }
 
 md-input-container label:not(.md-no-float){
@@ -32,32 +31,6 @@ md-input-container label:not(.md-no-float){
 
 md-input-container:not(.md-input-invalid).md-input-has-value label{
     color: rgba(63,81,181,1);
-}
-
-#select_value_label_1{
-    
-    color:#fff;
-    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    border-color: #fff;
-}
-
-
-#select_value_label_2{
-    
-    color:#fff;
-    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    border-color: #fff;
-}
-
-
-#select_value_label_3{
-    
-    color:#fff;
-    font-family: "Open Sans", "Montserrat", Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    border-color: #fff;
 }
 
 .cuerpo_registro{

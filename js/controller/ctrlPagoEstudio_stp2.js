@@ -1,4 +1,4 @@
-app.controller('ctrlPagoEstudio_stp2', function ($scope, $http, Payments, $location, AuthSession) {
+app.controller('ctrlPagoEstudio_stp2', function ($scope, $http, Payments, $location, AuthSession, $localStorage) {
     //console.log(Payments.getObject());
     if (jQuery.isEmptyObject(Payments.getObject()) === false && AuthSession.isLogged() === true) {
         $scope.pago_estudio = Payments.getObject();
@@ -22,8 +22,6 @@ app.controller('ctrlPagoEstudio_stp2', function ($scope, $http, Payments, $locat
             for (var j = 0; j < PlanEstudio.materiasCollection.length; j++) {
                 var Materia = PlanEstudio.materiasCollection[j];
                 if (Materia.seleccionado === true) {
-                    //console.lo
-                    //g(Materia.materia);
                     secciones.push(Materia.idSeccionSeleccionado);
                 }
             }
@@ -35,33 +33,33 @@ app.controller('ctrlPagoEstudio_stp2', function ($scope, $http, Payments, $locat
         }
 
         $scope.Estudio.cantidadNiveles = cantidadNiveles;
-
         $scope.final = {
             persona: $scope.Persona,
             pensum: $scope.Pensum,
             estudio: $scope.Estudio,
             periodo: $scope.Periodo,
-            planes_financiamiento: $scope.THEPlanFinanciamientoUntouched,
+            planes_financiamientoUntouched: $scope.THEPlanFinanciamientoUntouched,
+            planes_financiamiento: $scope.THEPlanFinanciamiento,
             secciones: secciones
         };
+        //console.log($scope.final);
+        $http({
+            method: 'POST',
+            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/payment/setpaymentinfo',
+            data: JSON.stringify($scope.final),
+        }).success(function (data) {
+            $localStorage.StudyToken = window.btoa(JSON.stringify($scope.final));
+            $scope.transactionToken = data.TOKEN;
+            //console.log(JSON.stringify(data));
+        }).error(function (data) {
+            //console.log(JSON.stringify(data));
+        });
     } else {
         $location.url("/inicio");
     }
     $scope.finish = function () {
-        //console.log($scope.final);
-
-        $http({
-            method: 'POST',
-            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/payment/inscribir',
-            data: JSON.stringify($scope.final),
-        }).success(function (data) {
-            alert('¡Estás inscrito!');
-            //console.log(JSON.stringify(data));
-            $location.url("/inicio");
-        }).error(function (data) {
-            alert('¡Ocurrió un error!');
-            //console.log(JSON.stringify(data));
-        });
+        paypal.checkout.initXO();
+        paypal.checkout.startFlow("https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" + $scope.transactionToken);
     }
     $scope.getTotal = function () {
         var total = 0;
@@ -75,16 +73,5 @@ app.controller('ctrlPagoEstudio_stp2', function ($scope, $http, Payments, $locat
         }
 
         return total;
-    };
-    $scope.continue = function () {
-        $http({
-            method: 'POST',
-            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/payment/inscribir',
-            data: JSON.stringify($scope.final),
-        }).success(function (data) {
-            //console.log(data);
-        }).error(function (data) {
-            //console.log(data);
-        });
     };
 });

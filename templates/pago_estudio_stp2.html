@@ -32,7 +32,7 @@
         <div class="separador-blanco">&nbsp;
         </div>
 
-        <div class="container-fluid " style="padding: 0%;margin: 0%">
+        <div id="principal" class="container-fluid " style="padding: 0%;margin: 0%">
 
             <div class="row">
                 <div class="col-md-2">
@@ -40,7 +40,7 @@
                 </div>
 
                 <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                    <div class="verticalLine">&nbsp;</div>
                 </div>
 
                 <div class="col-md-6" align="left">
@@ -98,128 +98,60 @@
                             {{Moneda.nombreCorto}} {{cuota.montoCuota}}
                         </div>
                     </div>
-                    <br>
-                    <div layout="row" >
-                        <div layout="column" flex></div>
-                        <div layout="column" flex="50" align="right" style="font-weight: bold;">
+                    <div layout="row" style="background-color: rgb(26,69,114);color:white;">
+                        <div layout="column" flex align="right" style="font-weight: bold;">
                             <h4>Monto Total</h4>
                         </div>
-                        <div layout="column" flex></div>
+                        <div layout="column" flex="40" align="right" style="margin-right:8px;">
+                            <h4>{{Moneda.nombreCorto}} {{getTotal()}}</h4>
+                        </div>
                     </div>
                     <div layout="row" >
                         <div layout="column" flex></div>
-                        <div layout="column" flex="20" align="right" style="margin:8px;background-color: rgb(26,69,114);color:white;">
-                            <h4>{{getTotal()}}</h4>
-                        </div>
                         <div layout="column" flex></div>
                     </div>
-                    <div layout="row" >
-                        <div layout="column" flex></div>
-                        <div layout="column" flex="50" align="left" style="font-weight: bold;">
-                            <h4>Información de la Tarjeta</h4>
-                        </div>
-                        <div layout="column" flex></div>
-                    </div>
-                    <div layout="row">
-                        <div layout="column" flex></div>
-                        <div layout="column" flex="80" align="center">
-                            <div layout="row">
-                                <div layout="column" flex="50">
-                                    <div class="form-group">
-                                        <label>Primer Nombre</label>
-                                        <input ng-model="payInfo.fist_name">
-                                    </div>
-                                </div>
-                                <div layout="column" flex="50">
-                                    <div class="form-group">
-                                        <label>Primer Apellido</label>
-                                        <input ng-model="payInfo.last_name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div layout="row">
-                                <div class="form-group">
-                                    <label for="">Tipo de tarjeta de Crédito</label>
-                                    <select ng-model="payInfo.type" class="form-control" >
-                                        <option value="visa" selected>Visa</option>
-                                        <option value="master">MasterCard</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div layout="row">
-                                <div class="form-group">
-                                    <label>Número de tarjeta (Sin guiones ni espacios)</label>
-                                    <input ng-model="payInfo.number">
-                                </div>
-                            </div>
-                            <div layout="row">
-                                <div layout="column" flex="50">
-                                    <div class="form-group">
-                                        <label for="">Año de Vencimiento</label>
-                                        <select class="form-control" ng-model="payInfo.expire_year">
-                                            <option value="2015" selected>2015</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div layout="column" flex="50">
-                                    <div class="form-group">
-                                        <label for="">Mes de Vencimiento</label>
-                                        <select class="form-control" ng-model="payInfo.expire_month">
-                                            <option value="01" selected>1</option>
-                                            <option value="02">2</option>
-                                            <option value="03">3</option>
-                                            <option value="04">4</option>
-                                            <option value="05">5</option>
-                                            <option value="06">6</option>
-                                            <option value="07">7</option>
-                                            <option value="08">8</option>
-                                            <option value="09">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div layout="row">
-                                <md-input-container flex>
-                                    <label>Últimos 3 dígitos en el reverso</label>
-                                    <input ng-model="payInfo.cvv2">
-                                </md-input-container>
-                            </div>
-                        </div>
-                        <div layout="column" flex></div>
-                    </div>
-                    <div layout="row">
+                    <br>
+                    <div layout="row" ng-show="transactionToken.length > 0">
                         <div layout="column" flex></div>
                         <div layout="column" flex="40" align="center">
-                            <md-button class="md-raised" style="background-color:#1a4572;color:white;" ng-click="finish()">Inscribirse</md-button>
+                            <a href="" id="t1" class="checkout">
+                                <img class="paypal-button-hidden" src="https://www.paypalobjects.com/es_ES/i/btn/btn_xpressCheckout.gif" alt="Check out with PayPal" />
+                            </a>
+                        </div>
+                        <div layout="column" flex></div>
+                    </div>
+                    <div layout="row" ng-show="!transactionToken.length">
+                        <div layout="column" flex></div>
+                        <div layout="column" flex="60" align="center">
+                            <h2>Cargando...</h2>
                         </div>
                         <div layout="column" flex></div>
                     </div>
                     <br>
                 </div>
+                <input type="hidden" ng-bind="transactionToken" id="transactionToken" value="{{transactionToken}}">
                 <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                    <div class="verticalLine">&nbsp;</div>
                 </div>
 
                 <div class="col-md-2" align="center">
                     <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
                 </div>
             </div>
-
         </div>
     </div>
-
 </section>
+<script type="text/javascript-lazy">
+    paypal.checkout.setup("E3K3DF6MDGZVW", {
+        environment: 'production',
+        click: function (event) {
+            event.preventDefault();
+            paypal.checkout.initXO();
+            var url = paypal.checkout.urlPrefix + $("#transactionToken").val();
+            console.log(url);
+            paypal.checkout.startFlow(url);
+        },
+        button: ['t1']
+    });
+</script>
 

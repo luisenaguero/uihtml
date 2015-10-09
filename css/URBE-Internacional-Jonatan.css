@@ -4,308 +4,336 @@ body {
     background-color: transparent;
 }
 .separador-negro {
-	background-color: black;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-color: black;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 }
 .separador-rayado-blanco {
-	background-color: white;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
-	border-bottom-style: dashed;
-	border-width: 2px;
-	border-color: #E6E6E6;
+    background-color: white;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
+    border-bottom-style: dashed;
+    border-width: 2px;
+    border-color: #E6E6E6;
 }
 .separador-blanco {
-	background-color: white;
-	border-radius: 0%;
-	width: 100%;
-	height: 0%;
-	padding: 0%;
+    background-color: white;
+    border-radius: 0%;
+    width: 100%;
+    height: 0%;
+    padding: 0%;
 }
 
 .noticias-recientes {
-	margin: 0%;
-	padding: 0%;
+    margin: 0%;
+    padding: 0%;
 
 }
 
 .ver-eventos {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 1%;
-	color: #2587e8;
-	font-family: "Montserrat";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 1%;
+    color: #2587e8;
+    font-family: "Montserrat";
 }
 
 .evento-1 {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: black;
-	font-family: "Montserrat";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: black;
+    font-family: "Montserrat";
 }
 
 .evento-2 {
-	margin-top: 0%;
-	margin-left: 0%;
-	margin-bottom: 0%;
-	margin-right: 0%;
-	padding: 0%;
-	color: black;
-	font-family: "Open Sans";
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+    color: black;
+    font-family: "Open Sans";
 }
 
 .verticalLine {
-	display: block;
-	background-color:#BDBDBD;
-	position:absolute;
-	left: 50%;
+    display: block;
+    background-color:#BDBDBD;
+    position:absolute;
+    left: 50%;
+    height: 20px;
 }
 
 .parrafo {
-	font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	text-align: justify;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    text-align: justify;
 }
 
 .titulo {
-	font-family: "Montserrat", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 200px) and (max-width: 1000px){
-	
-	.verticalLine {
-		display: none;
-	    position:absolute;
-	    left: 50%;
-	}
 
-	.parrafo {
-		font-family: "Open Sans", Helvetica, Arial, sans-serif;
-		text-align: justify;
-	}
+    .verticalLine {
+        display: none;
+        position:absolute;
+        left: 50%;
+    }
 
-	.titulo {
-		font-family: "Montserrat", Helvetica, Arial, sans-serif;
-		text-align: center;
-	}
+    .parrafo {
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+        text-align: justify;
+    }
+
+    .titulo {
+        font-family: "Montserrat", Helvetica, Arial, sans-serif;
+        text-align: center;
+    }
 
 }
 
 /*
-	Etiquetas para universidad-corporativa
+        Etiquetas para universidad-corporativa
 */
 
 .primeraEtiquetaCorp {
-	position: absolute; 
-	width: 189px; 
-	height: 390px; 
-	margin-left: -78px;
+    position: absolute; 
+    width: 189px; 
+    height: 390px; 
+    margin-left: -78px;
     background-image: url(img/img_universidad_corporativa/universidad-corporativa_03.png); 
     background-size: contain; 
     background-repeat: no-repeat
 }
 
 .segundaEtiquetaCorp {
-	position: absolute; 
-	width: 189px; 
-	height: 390px; 
-	margin-left: -34px; 
-	background-image: url(img/img_universidad_corporativa/universidad-corporativa_05.png); 
-	background-size: contain; 
-	background-repeat: no-repeat
+    position: absolute; 
+    width: 189px; 
+    height: 390px; 
+    margin-left: -34px; 
+    background-image: url(img/img_universidad_corporativa/universidad-corporativa_05.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
 }
 
 .terceraEtiquetaCorp {
-	position: absolute; 
-	width: 189px; 
-	height: 390px; 
-	margin-left: 10px; 
-	background-image: url(img/img_universidad_corporativa/universidad-corporativa_07.png); 
-	background-size: contain; 
-	background-repeat: no-repeat
+    position: absolute; 
+    width: 189px; 
+    height: 390px; 
+    margin-left: 10px; 
+    background-image: url(img/img_universidad_corporativa/universidad-corporativa_07.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
 }
 
 /*
-	Etiquetas para modelo-educativo
+        Etiquetas para modelo-educativo
 */
 .primeraEtiquetaD {
-	position: absolute; 
-	width: 192px; 
-	height: 262px; 
-	margin-left: -74px;
+    position: absolute; 
+    width: 192px; 
+    height: 262px; 
+    margin-left: -74px;
     background-image: url(img/img_modelo_educativo/Modelo-Educativo_03.png); 
     background-size: contain; 
     background-repeat: no-repeat
 }
 
 .segundaEtiquetaD {
-	position: absolute; 
-	width: 190px; 
-	height: 262px; 
-	margin-left: -31px; 
-	background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
-	background-size: contain; 
-	background-repeat: no-repeat
+    position: absolute; 
+    width: 190px; 
+    height: 262px; 
+    margin-left: -31px; 
+    background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
 }
 
 .terceraEtiquetaD {
-	position: absolute; 
-	width: 190px; 
-	height: 262px; 
-	margin-left: 9px; 
-	background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
-	background-size: contain; 
-	background-repeat: no-repeat
+    position: absolute; 
+    width: 190px; 
+    height: 262px; 
+    margin-left: 9px; 
+    background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
 }
 
 .primeraEtiquetaG {
-	position: absolute; 
-	width: 282px; 
-	height: 262px; 
-	margin-left: -74px;
+    position: absolute; 
+    width: 282px; 
+    height: 262px; 
+    margin-left: -74px;
     background-image: url(img/img_modelo_educativo/Modelo-Educativo_13.png); 
     background-size: contain; 
     background-repeat: no-repeat
 }
 
 .segundaEtiquetaG {
-	position: absolute; 
-	width: 282px; 
-	height: 262px; 
-	margin-left: -20px; 
-	background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
-	background-size: contain; 
-	background-repeat: no-repeat
+    position: absolute; 
+    width: 282px; 
+    height: 262px; 
+    margin-left: -20px; 
+    background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
+    background-size: contain; 
+    background-repeat: no-repeat
 }
 
 .tituloEnEtiqueta {
-	color: white; 
+    color: white; 
 }
 
 .parrafoEnEtiqueta {
-	color: white; 
-	text-align: left;
-	margin-left: 4%;
-	margin-top: 4%;  
-	font-size: 0.875em;
+    color: white; 
+    text-align: left;
+    margin-left: 4%;
+    margin-top: 4%;  
+    font-size: 0.875em;
 }
 
 @media (min-width: 600px) and (max-width: 1000px){
-	
-	.primeraEtiquetaD {
-		width: 192px; 
-		height: 262px; 
-	    background-image: url(img/img_modelo_educativo/Modelo-Educativo_03.png); 
-	    background-repeat: no-repeat
 
-	}
+    .primeraEtiquetaD {
+        width: 192px; 
+        height: 262px; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_03.png); 
+        background-repeat: no-repeat
 
-	.segundaEtiquetaD {
-		
-		width: 190px; 
-		height: 262px; 
-		margin-left: 33%;
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
-		background-repeat: no-repeat
-	}
+    }
 
-	.terceraEtiquetaD { 
-		position: static;
-		width: 190px; 
-		height: 262px; 
-		margin-left: 79%;
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
-		background-repeat: no-repeat
-	}
+    .segundaEtiquetaD {
 
-	.primeraEtiquetaG {
-		width: 282px; 
-		height: 262px; 
-		margin-left: -2%;
-	    background-image: url(img/img_modelo_educativo/Modelo-Educativo_13.png); 
-	    background-size: contain; 
-	    background-repeat: no-repeat
-	}
+        width: 190px; 
+        height: 262px; 
+        margin-left: 33%;
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
+        background-repeat: no-repeat
+    }
 
-	.segundaEtiquetaG {
-		position: static; 
-		width: 282px; 
-		height: 262px; 
-		margin-left: 60%; 
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
-		background-size: contain; 
-		background-repeat: no-repeat
-	}
+    .terceraEtiquetaD { 
+        position: static;
+        width: 190px; 
+        height: 262px; 
+        margin-left: 79%;
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
+        background-repeat: no-repeat
+    }
 
-	.tituloEnEtiqueta {
-		color: white; 
-	}
+    .primeraEtiquetaG {
+        width: 282px; 
+        height: 262px; 
+        margin-left: -2%;
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_13.png); 
+        background-size: contain; 
+        background-repeat: no-repeat
+    }
 
-	.parrafoEnEtiqueta {
-		color: white; 
-		text-align: left
-	}
+    .segundaEtiquetaG {
+        position: static; 
+        width: 282px; 
+        height: 262px; 
+        margin-left: 60%; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
+        background-size: contain; 
+        background-repeat: no-repeat
+    }
+
+    .tituloEnEtiqueta {
+        color: white; 
+    }
+
+    .parrafoEnEtiqueta {
+        color: white; 
+        text-align: left
+    }
 
 }
 
 @media (min-width: 0px) and (max-width: 599px){
-	
-	.primeraEtiquetaD {
-		position: static; 
-		width: 192px; 
-		height: 262px; 
-	    background-image: url(img/img_modelo_educativo/Modelo-Educativo_03.png); 
-	    background-repeat: no-repeat
 
-	}
+    .primeraEtiquetaD {
+        position: static; 
+        width: 192px; 
+        height: 262px; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_03.png); 
+        background-repeat: no-repeat
 
-	.segundaEtiquetaD {
-		position: static; 
-		width: 190px; 
-		height: 262px; 
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
-		background-repeat: no-repeat
-	}
+    }
 
-	.terceraEtiquetaD { 
-		position: static;
-		width: 190px; 
-		height: 262px; 
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
-		background-repeat: no-repeat
-	}
+    .segundaEtiquetaD {
+        position: static; 
+        width: 190px; 
+        height: 262px; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_05.png); 
+        background-repeat: no-repeat
+    }
 
-	.primeraEtiquetaG {
-		position: static; 
-		width: 282px; 
-		height: 262px; 
-		margin-left: -74px;
-	    background-image: url(img/img_modelo_educativo/Modelo-Educativo_13.png); 
-	    background-size: contain; 
-	    background-repeat: no-repeat
-	}
+    .terceraEtiquetaD { 
+        position: static;
+        width: 190px; 
+        height: 262px; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_07.png); 
+        background-repeat: no-repeat
+    }
 
-	.segundaEtiquetaG {
-		position: static; 
-		width: 282px; 
-		height: 262px; 
-		margin-left: -20px; 
-		background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
-		background-size: contain; 
-		background-repeat: no-repeat
-	}
+    .primeraEtiquetaG {
+        position: static; 
+        width: 282px; 
+        height: 262px; 
+        margin-left: -74px;
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_13.png); 
+        background-size: contain; 
+        background-repeat: no-repeat
+    }
+
+    .segundaEtiquetaG {
+        position: static; 
+        width: 282px; 
+        height: 262px; 
+        margin-left: -20px; 
+        background-image: url(img/img_modelo_educativo/Modelo-Educativo_15.png); 
+        background-size: contain; 
+        background-repeat: no-repeat
+    }
 }
 
 .urbe-blue{
-	background-color: #1a4572;
+    background-color: #1a4572;
 }
 
+.angular-button{
+    background-color: #1a4572;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    color: rgba(255,255,255,0.87);
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+    outline: 0;
+    border: 0;
+    display: inline-block;
+    align-items: center;
+    padding: 0 6px;
+    margin: 6px 8px;
+    line-height: 36px;
+    min-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: inherit;
+    font-variant: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
+}

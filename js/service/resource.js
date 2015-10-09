@@ -21,8 +21,20 @@ app.factory("userLogin", function ($resource) {
     };
 });
 
-app.factory("personaService", function ($resource) {
-    var user = $resource('https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people', {}, {
+app.factory('Payments', function () {
+    var obj = {};
+    return {
+        setObject: function (new_Object) {
+            obj = new_Object;
+        },
+        getObject: function () {
+            return obj;
+        }
+    }
+});
+
+app.factory("personaService", function ($resource, AuthSession) {
+    var user = $resource('https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/', {}, {
         crearPrueba: {
             method: 'POST',
             url: dir.REGISTRO_PERSONA,
@@ -34,10 +46,39 @@ app.factory("personaService", function ($resource) {
         modificarPerfil: {
             method: 'POST',
             url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people/updatePeople'
-        } 
+        },
+        cambiarFoto: {
+            method: 'POST',
+            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people/storeImage'
+        },
+        solicitudPais: {
+            method: 'GET',
+            url: dir.DATOS_PERSONALES,
+            headers: {'entity': 'pais'},
+            isArray: true
+        },
+        registroAcademico: function () {
+            return $resource(dir.ESTUDIO.PERSONA_REGISTRO_ACADEMICO, {}, {
+                ejecutar: {
+                    method: 'GET',
+                    url: dir.ESTUDIO.PERSONA_REGISTRO_ACADEMICO + AuthSession.getUser()["id"],
+                    isArray: true
+                }
+            });
+        },
+        estudioSeleccionado: function (idEstudio) {
+            return $resource(dir.ESTUDIO.PERSONA_ESTUDIO_ELEGIDO, {}, {
+                ejecutar: {
+                    method: 'GET',
+                    url: dir.ESTUDIO.PERSONA_ESTUDIO_ELEGIDO + idEstudio,
+                    isArray: true
+                }
+            });
+        }
     });
     return user;
 });
+
 
 //app.factory("perfilService", function ($resource) {
 //    return {

@@ -27,132 +27,149 @@
 <!-- CONTENIDO -->
 <section>
     <!--Separador Blanco-->
-    
+
     <div class="container-fluid" style="padding: 0%;margin: 0%">
         <div class="separador-blanco">&nbsp;
         </div>
 
-        <div class="container-fluid " style="padding: 0%;margin: 0%">
+        <div id="principal" class="container-fluid " style="padding: 0%;margin: 0%">
 
             <div class="row">
-                
-                
+
+
                 <div class="col-md-3">
                     <div><img class="img-responsive" src="img/img_diplomado/neg_electronicos.png"/></div>
                     &nbsp;
-                   
-                    
+
+
                 </div>
-                
-              <!-- <div id="verLine1" class="col-md-1">
-                    <div class="verticalLine" style="height: 249px">&nbsp;</div>
-                </div>-->
+
+                <!-- <div id="verLine1" class="col-md-1">
+                      <div class="verticalLine" style="height: 249px">&nbsp;</div>
+                  </div>-->
 
                 <div class="col-md-5" align="left">
-                  <div><h4 class="titulo"><span style=" font-size:25px;">DIPLOMADO EN NEGOCIOS ELECTRÓNICOS Y REDES SOCIALES</span></h4>
-                  
-                  <div><iframe src="templates/diplomados/costos-diplomados.html" frameborder="0"" width="530" height="200" scrolling="no"></iframe></div>
-                  
-                  <p style="font-weight:bold; font-size:15px;">Objetivo general</p>
-                  <p class="parrafo">Proporcionar el manejo, desarrollo y gestión de medios electrónicos de comunicación y ventas, respondiendo a criterios de innovación y creatividad académica esperada
-</p><br />
+                    <div><h4 class="titulo"><span style=" font-size:25px;">DIPLOMADO EN NEGOCIOS ELECTRÓNICOS Y REDES SOCIALES</span></h4>
 
-                  <p style="font-weight:bold; font-size:15px;">Dirigido a:</p>
-                  <p class="parrafo">Todo público con conocimientos básicos en el uso de ofimática e internet que desee conocer o ampliar sus conocimientos sobre las ventas para internet y redes sociales.</p><br />
+                        <div><iframe src="templates/diplomados/costos-diplomados.html" frameborder="0"" width="530" height="200" scrolling="no"></iframe></div>
 
-                  <p style="font-weight:bold; font-size:15px;">Plan de estudio:</p>
-                  <p class="parrafo">El Diplomado consta de 8 módulos, actividades con alto grado de participación y compromiso, están centradas en el participante, quien controla su aprendizaje y es responsable de su autoevaluación, bajo la metodología aprender haciendo.
-</p><br />
+                        <p style="font-weight:bold; font-size:15px;">Objetivo general</p>
+                        <p class="parrafo">Proporcionar el manejo, desarrollo y gestión de medios electrónicos de comunicación y ventas, respondiendo a criterios de innovación y creatividad académica esperada
+                        </p><br />
 
-                  <p style="font-weight:bold; font-size:15px;">Horario:</p>
-                  <p class="parrafo">Tutorías (en línea), entre lunes y viernes a partir de las 6:00 p.m, Dos sesiones de tutorías semanales.
-</p><br />
-                  
-                  
-                  <p style="font-weight:bold; font-size:15px;">Duración:</p>
-                   <p class="parrafo">06 meses.</p><br />
-                   <p style="font-weight:bold; font-size:15px;">Requisitos de egreso:</p>
-                   <p class="parrafo">Aprobar todos los Módulos con una nota mayor o igual a 15 pts.</p><br />
-                 <p style="font-weight:bold; font-size:15px;">Diploma que se otorga:</p>
-                   <p class="parrafo">Diplomado en Negocios Electrónicos y Redes Sociales.</p>
-                   <p class="parrafo">&nbsp;</p>
-                   <p style="font-weight:bold; font-size:15px;">&nbsp;&nbsp;&nbsp;Módulos:</p>
-                   <div class="modulos-extension">
-                     <iframe src="https://www.urbe.edu/Pensum/PensumView.do?idPensum=1132" frameborder="0"" hspace="0" vspace="0" scrolling="no"></iframe>
-	</div><br />  
+                        <p style="font-weight:bold; font-size:15px;">Dirigido a:</p>
+                        <p class="parrafo">Todo público con conocimientos básicos en el uso de ofimática e internet que desee conocer o ampliar sus conocimientos sobre las ventas para internet y redes sociales.</p><br />
 
-                  
-                  </div>
-                  &nbsp;
-                  
-                  
+                        <p style="font-weight:bold; font-size:15px;">Plan de estudio:</p>
+                        <p class="parrafo">El Diplomado consta de 8 módulos, actividades con alto grado de participación y compromiso, están centradas en el participante, quien controla su aprendizaje y es responsable de su autoevaluación, bajo la metodología aprender haciendo.
+                        </p><br />
+
+                        <p style="font-weight:bold; font-size:15px;">Horario:</p>
+                        <p class="parrafo">Tutorías (en línea), entre lunes y viernes a partir de las 6:00 p.m, Dos sesiones de tutorías semanales.
+                        </p><br />
 
 
+                        <p style="font-weight:bold; font-size:15px;">Duración:</p>
+                        <p class="parrafo">06 meses.</p><br />
+                        <p style="font-weight:bold; font-size:15px;">Requisitos de egreso:</p>
+                        <p class="parrafo">Aprobar todos los Módulos con una nota mayor o igual a 15 pts.</p><br />
+                        <p style="font-weight:bold; font-size:15px;">Diploma que se otorga:</p>
+                        <p class="parrafo">Diplomado en Negocios Electrónicos y Redes Sociales.</p>
+                        <p class="parrafo">&nbsp;</p>
+                        <p style="font-weight:bold; font-size:15px;">&nbsp;&nbsp;&nbsp;Módulos:</p>
+                        <div class="modulos-extension">
+                            <iframe src="https://www.urbe.edu/Pensum/PensumView.do?idPensum=1132" frameborder="0"" hspace="0" vspace="0" scrolling="no"></iframe>
+                        </div><br />  
+                        <div layout="row" ng-if="((PlanesFinanciamiento.length > 0) && (isLogged) && (puedeInscribir === true))">
+                            <div layout="column" flex="100">
+                                <md-button class="md-raised" style="background-color:#21569f;color:white;" ng-click="goOn()">Inscribirse</md-button>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(!PlanesFinanciamiento && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Cargando...</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>La inscripción para este estudio no está disponible.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(puedeInscribir === false && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Ya está inscrito en este estudio.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(!isLogged)">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Debe iniciar sesión si desea inscribirse en este estudio.</h2>
+                            </div>
+                        </div>
+                    </div>
+                    &nbsp;
                 </div>
 
                 <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 1350px">&nbsp;</div>
+                    <div class="verticalLine">&nbsp;</div>
                 </div>
 
                 <div class="col-md-2" align="center">
-                    <a href="http://www.urbeinternacional.com/#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
                 </div>
             </div>
             &nbsp;
-             &nbsp;
-              
-        <!--Nueva sección de Cursos-->
-          <!-- <div class="row">
-                <div class="col-md-2">
-                    <h4 class="titulo"><span style=" font-weight:bold;padding-left:35px;">CURSOS</span></h4>
-                </div>
+            &nbsp;
 
-               <div id="verLine1" class="col-md-1">
-                    <div class="verticalLine" style="height: 655px">&nbsp;</div>
-                </div>
-
-                <div class="col-md-5" align="left">
-                     <div style=" margin-left:25px;">
-                  <img class="img-responsive" src="img/img_diplomado/img_cursos.jpg"/>
+            <!--Nueva sección de Cursos-->
+            <!-- <div class="row">
+                  <div class="col-md-2">
+                      <h4 class="titulo"><span style=" font-weight:bold;padding-left:35px;">CURSOS</span></h4>
                   </div>
-                  &nbsp;
-                    <ul class="titulo">
-                     <li><a href="">NORMAS ISO 9001:2015 “RUMBO A LA CERTIFICACIÓN”</a></li>
-                     <li><a href="">HERRAMIENTAS PARA EL ASEGURAMIENTO DE LA CALIDAD</a></li>
-                     <li><a href="">ADMINISTRACIÓN DE INVENTARIOS</a></li>
-                     <li><a href="">PETRÓLEO PARA NO PETROLEROS</a></li>
-                     <li><a href="">GERENCIANDO UNA EMPRESA</a></li>
-                     <li><a href="">EDUCANDO SIN IRA (EL MANEJO DEL AUTOCONTROL EMOCIONAL)</a></li>
-                     <li><a href="">ADMINISTRACIÓN DE CONTRATOS DE OBRAS PÚBLICAS, BIENES Y SERVICIOS</a></li>
-                     <li><a href="">ACTUALIZACIÓN EN CONTRATOS PÚBLICOS</a></li>
-                     <li><a href="">¿CÓMO ELABORAR UN PROGRAMA DE SALUD Y SEGURIDAD LABORAL?</a></li>
-                     <li><a href="">AUTOESTIMA Y MOTIVACIÓN AL LOGRO (CLAVE DEL ÉXITO)</a></li>
-                     <li><a href="">MANEJO DEL ESTRÉS EN TIEMPO DE CRISIS (TÉCNICAS DE RELAJACIÓN)</a></li>
-                     <li><a href="">CALIDAD DE SERVICIOS AL CLIENTE</a></li>
-                     <li><a href="">DESARROLLO DE HABILIDADES DE COUNSELING Y COACHING</a></li>
-                     <li><a href="">FINANZAS PARA NO FINANCIEROS</a></li>
-                     <li><a href="">PNL PARA NEGOCIACIONES EFECTIVAS</a></li>
-                     <li><a href="">GERENCIA DE EVENTOS ESPECIALES Y PROTOCOLO</a></li>
-                     <li><a href="">PRESENTACIONES ORALES EFECTIVAS</a></li>
-                     
-                    </ul>
+  
+                 <div id="verLine1" class="col-md-1">
+                      <div class="verticalLine" style="height: 655px">&nbsp;</div>
+                  </div>
+  
+                  <div class="col-md-5" align="left">
+                       <div style=" margin-left:25px;">
+                    <img class="img-responsive" src="img/img_diplomado/img_cursos.jpg"/>
+                    </div>
                     &nbsp;
-                    &nbsp;
-                    
-                </div>
+                      <ul class="titulo">
+                       <li><a href="">NORMAS ISO 9001:2015 “RUMBO A LA CERTIFICACIÓN”</a></li>
+                       <li><a href="">HERRAMIENTAS PARA EL ASEGURAMIENTO DE LA CALIDAD</a></li>
+                       <li><a href="">ADMINISTRACIÓN DE INVENTARIOS</a></li>
+                       <li><a href="">PETRÓLEO PARA NO PETROLEROS</a></li>
+                       <li><a href="">GERENCIANDO UNA EMPRESA</a></li>
+                       <li><a href="">EDUCANDO SIN IRA (EL MANEJO DEL AUTOCONTROL EMOCIONAL)</a></li>
+                       <li><a href="">ADMINISTRACIÓN DE CONTRATOS DE OBRAS PÚBLICAS, BIENES Y SERVICIOS</a></li>
+                       <li><a href="">ACTUALIZACIÓN EN CONTRATOS PÚBLICOS</a></li>
+                       <li><a href="">¿CÓMO ELABORAR UN PROGRAMA DE SALUD Y SEGURIDAD LABORAL?</a></li>
+                       <li><a href="">AUTOESTIMA Y MOTIVACIÓN AL LOGRO (CLAVE DEL ÉXITO)</a></li>
+                       <li><a href="">MANEJO DEL ESTRÉS EN TIEMPO DE CRISIS (TÉCNICAS DE RELAJACIÓN)</a></li>
+                       <li><a href="">CALIDAD DE SERVICIOS AL CLIENTE</a></li>
+                       <li><a href="">DESARROLLO DE HABILIDADES DE COUNSELING Y COACHING</a></li>
+                       <li><a href="">FINANZAS PARA NO FINANCIEROS</a></li>
+                       <li><a href="">PNL PARA NEGOCIACIONES EFECTIVAS</a></li>
+                       <li><a href="">GERENCIA DE EVENTOS ESPECIALES Y PROTOCOLO</a></li>
+                       <li><a href="">PRESENTACIONES ORALES EFECTIVAS</a></li>
+                       
+                      </ul>
+                      &nbsp;
+                      &nbsp;
+                      
+                  </div>
+  
+                  <div id="verLine2" class="col-md-1">
+                      <div class="verticalLine" style="height: 655px">&nbsp;</div>
+                  </div>
+  
+                  <div class="col-md-3" align="center">-->
 
-                <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 655px">&nbsp;</div>
-                </div>
-
-                <div class="col-md-3" align="center">-->
-                    
-                </div>
-            </div>
-        
-        <!--Fin de sección-->      
         </div>
     </div>
-   
+
+    <!--Fin de sección-->      
+
 </section>
 

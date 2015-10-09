@@ -5,6 +5,7 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
     } else {
         $scope.open = true;
         $scope.persona = AuthSession.getUser();
+        console.log($scope.persona);
 
         var birthday = new Date($scope.persona.fechaNacimiento);
         $scope.persona.fechaNacimiento = birthday.format("yyyy-mm-dd");
@@ -30,7 +31,7 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
                 jQuery("#pContent").slideDown("slow");
                 //console.log($scope.open);
             }
-        }
+        };
 
         $scope.sexos = [
             {
@@ -61,7 +62,7 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true
-            })
+            });
         };
 
         //PopUp para cambiar contraseña
@@ -72,37 +73,57 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true
-            })
+            });
+        };
+
+        //PopUp para cambiar foto
+        $scope.showChangeF = function (ev) {
+            $mdDialog.show({
+                controller: 'ctrlPerfil',
+                templateUrl: './templates/popup/cambiar-foto.html',
+                parent: angular.element(document.body),
+                targetEvent: ev,
+                clickOutsideToClose: true
+            });
+        };
+
+        $scope.uploadPhoto = function (files) {
+
+            var val = $("#user_profile_pic").val();
+            switch (val.substring(val.lastIndexOf('.') + 1).toLowerCase()) {
+                case 'gif':
+                case 'jpg':
+                case 'png':
+                    var fd = new FormData();
+                    fd.append("file", files[0]);
+                    personaService.cambiarFoto((fd, $scope.persona.id), function (response) {
+                        console.log(response);
+                        $window.location.reload();
+                    });
+                    //            $http.post(uploadUrl, {fd, $scope.persona.id}, {
+                    //            withCredentials: true,
+                    //                    headers: {'Content-Type': undefined },
+                    //                    transformRequest: angular.identity
+                    //            });
+                    break;
+                default:
+                    $(this).val('');
+                    // error message here
+                    alert("Esto no es una imagen");
+                    break;
+            }
         };
 
         $scope.update = function () {
             personaService.modificarPerfil(JSON.stringify($scope.persona), function (response) {
                 console.log(response);
-                AuthSession.clearStorage();
-//                AuthSession.updateProfile("TOKENUSER", window.btoa(JSON.stringify($scope.persona)));
-//                $scope.persona = AuthSession.getUser();
-//                console.log(JSON.stringify($scope.persona));
+                AuthSession.update("TOKENUSER", window.btoa(JSON.stringify($scope.persona)));
                 $window.location.reload();
             }, function (error) {
                 console.log("ERROR");
                 console.log(error);
-                
             }
             );
-            
-//            $http({
-//                method: 'POST',
-//                url: 'http://10.200.36.29:8080/urbe-api-intern/rest/1.0/people/updatePeople',
-//                data: JSON.stringify($scope.persona)
-//            }).success(function (data) {
-//                console.log(JSON.stringify(data));
-//                console.log($scope.persona);
-//                $window.location.reload();
-////            console.log("exito");
-//            }).error(function (data) {
-////            console.log(JSON.stringify(data));
-//                console.log($scope.persona);
-//            })
         };
     }
-})
+});

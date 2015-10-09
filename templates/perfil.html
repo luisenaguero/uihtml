@@ -1,22 +1,22 @@
 <div layout="row" layout-wrap layout-align="center" style="padding-top: 40px;">
     <div flex-gt-md="25" flex-md="100" layout-padding style="padding: 32px" align="center">
-         <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
-                         ng-class="demo.selectedMode">
+        <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                           ng-class="demo.selectedMode">
             <md-fab-trigger>
-            <md-button aria-label="menu" style="background-color: #1a4572" class="md-fab">
-                <i style="color: white" class="fa fa-bars"></i>
-            </md-button>
+                <md-button aria-label="menu" style="background-color: #1a4572" class="md-fab">
+                    <i style="color: white" class="fa fa-bars"></i>
+                </md-button>
             </md-fab-trigger>
             <md-fab-actions>
-            <md-button aria-label="Twitter" ng-click="showEditP()" style="background-color: #1a4572" class="md-fab md-raised md-mini">
-                <i style="color: white" class="fa fa-pencil-square-o"></i>
-            </md-button>
-            <md-button aria-label="Facebook" ng-click="showChangeP()" style="background-color: #1a4572" class="md-fab md-raised md-mini">
-                <i style="color: white" class="fa fa-lock"></i>
-            </md-button>
-            <md-button aria-label="Google Hangout" style="background-color: #1a4572" class="md-fab md-raised md-mini">
-                <i style="color: white" class="fa fa-picture-o"></i>
-            </md-button>
+                <md-button aria-label="Editar Perfil" ng-click="showEditP()" style="background-color: #1a4572" class="md-fab md-raised md-mini">
+                    <i style="color: white" class="fa fa-pencil-square-o"></i>
+                </md-button>
+                <md-button aria-label="Cambiar Contraseña" ng-click="showChangeP()" style="background-color: #1a4572" class="md-fab md-raised md-mini">
+                    <i style="color: white" class="fa fa-lock"></i>
+                </md-button>
+                <md-button aria-label="Google Hangout" ng-click="showChangeF()" style="background-color: #1a4572" class="md-fab md-raised md-mini">
+                    <i style="color: white" class="fa fa-picture-o"></i>
+                </md-button>
             </md-fab-actions>
         </md-fab-speed-dial>
         <img class="img-circle" src="http://cdn.techgyd.com/funny-profile-face-optical-illusion.jpg" alt="foto-de-perfil" width="250" height="250">
@@ -30,7 +30,7 @@
             <div layout layout="row" style="margin: 5px">
                 <div layout layout="column" flex="60">
                     <h4><strong>Datos Básicos</strong></h4>
-                    
+
                 </div>
                 <div class="pullright" layout layout="column" layout-align="right" flex="40">
                     <span style="width:100%;" align="right">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div id="pContent">
-                <md-divider style="width:100%;"></md-divider>
+                <md-divider></md-divider>
                 <div layout layout="row" style="margin: 5px">
                     <div layout layout="column" flex="60">
                         <h4>Nombre Completo</h4>  
@@ -54,10 +54,28 @@
                 <md-divider></md-divider>
                 <div layout layout="row" style="margin: 5px">
                     <div layout layout="column" flex="60">
-                        <h4>Telefono</h4>  
+                        <h4>Estado Civíl</h4>  
+                    </div>
+                    <div layout layout="column" flex="40">
+                        <span style="width:100%;" align="right"><h4>{{persona.estadoCivil.estadoCivil}}</h4></span>  
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout layout="row" style="margin: 5px">
+                    <div layout layout="column" flex="60">
+                        <h4>Telefono de Habitacion</h4>  
+                    </div>
+                    <div type="number" class="pull-right" layout layout="column" layout-align="right" flex="40">
+                        <span style="width:100%;" align="right"><h4>{{persona.telefonoHabitacion}}</h4></span>  
+                    </div>
+                </div>
+                <md-divider></md-divider>
+                <div layout layout="row" style="margin: 5px">
+                    <div layout layout="column" flex="60">
+                        <h4>Telefono Celular</h4>  
                     </div>
                     <div class="pull-right" layout layout="column" layout-align="right" flex="40">
-                        <span style="width:100%;" align="right"><h4>{{persona.telefonoHabitacion}}</h4></span>  
+                        <span style="width:100%;" align="right"><h4>{{persona.telefonoMovil}}</h4></span>  
                     </div>
                 </div>
                 <md-divider></md-divider>
@@ -65,7 +83,7 @@
                     <div layout layout="column" flex="60">
                         <h4>Correo Electronico</h4>  
                     </div>
-                    <div class="pull-right" layout layout="column" layout-align="right" flex="40">
+                    <div type="email" class="pull-right" layout layout="column" layout-align="right" flex="40">
                         <span style="width:100%;" align="right"><h4>{{persona.correoPrimario}}</h4></span>  
                     </div>
                 </div>

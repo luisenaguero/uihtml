@@ -2,6 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * by Eddie Master
  */
 app.controller('ctrlRegistro', function ($scope, $http, $filter, personaService, $mdDialog, $rootScope) {
 
@@ -14,16 +15,15 @@ app.controller('ctrlRegistro', function ($scope, $http, $filter, personaService,
         "discapacidad 3",
         "discapacidad 4"
     ];
-    $scope.paises = [
-        {
-            valor: '1',
-            nombre: 'Venezuela'
-        },
-        {
-            valor: '2',
-            nombre: 'Colombia'
-        }
-    ];
+
+
+    //by Eddie Master lista de paises
+    personaService.solicitudPais(function (success) {
+        $scope.paises = success;
+    }, function (error) {
+        console.log("error al pedir los paises" + error);
+    });
+
     $scope.sexos = [
         {
             valor: 'F',
@@ -105,5 +105,7 @@ app.controller('ctrlRegistro', function ($scope, $http, $filter, personaService,
             clickOutsideToClose: false
         });
     };
-
+    //PINTAR LOS SELECTS DE SEXO Y PAIS
+    $("#"+$("[name=pais] md-select-value").attr("id")).addClass("select-registro");
+    $("#"+$("[name=sexo] md-select-value").attr("id")).addClass("select-registro");
 });

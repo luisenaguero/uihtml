@@ -31,9 +31,9 @@
         <div class="separador-blanco">&nbsp;
         </div>
 
-        <div class="container-fluid " style="padding: 0%;margin: 0%">
+        <div id="principal" class="container-fluid " style="padding: 0%;margin: 0%">
 
-            <div class="row">
+            <div  class="row">
                 <div class="col-md-3">
 
                 </div>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <br>
-                    <div ng-if="cantidadUc > 0">
+                    <div ng-if="cantidadUc > 0 && THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection.length > 0">
                         <div layout="row">
                             <div layout="column" flex>
                                 <h4>Seleccione el monto a cancelar</h4>
@@ -145,7 +145,7 @@
                         </div>
                         <div ng-class="{yupDetalle: cuota.seleccionado, nopeDetalle: !cuota.seleccionado}" layout="row" ng-repeat="cuota in THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection" on-finish-render="ngRepeatFinished" >
                             <div layout="column" flex="10" align="center">
-                                <md-checkbox md-no-ink aria-label="{{cuota.concepto}}" ng-change="cambioCuota($index)" ng-model="cuota.seleccionado" class="md-primary" ng-disabled="$first" name="cuota_{{$index}}" id="cuota_{{$index}}">
+                                <md-checkbox md-no-ink aria-label="Cuota" ng-change="cambioCuota($index)" ng-model="cuota.seleccionado" class="md-primary" ng-disabled="$first" name="cuota_{{$index}}" id="cuota_{{$index}}">
 
                                 </md-checkbox>
                             </div>
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 290px">&nbsp;</div>
+                    <div class="verticalLine">&nbsp;</div>
                 </div>
 
                 <div class="col-md-3" align="center">

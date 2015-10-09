@@ -27,68 +27,89 @@
 <!-- CONTENIDO -->
 <section>
     <!--Separador Blanco-->
-    
+
     <div class="container-fluid" style="padding: 0%;margin: 0%">
         <div class="separador-blanco">&nbsp;
         </div>
 
-        <div class="container-fluid " style="padding: 0%;margin: 0%">
+        <div id="principal" class="container-fluid " style="padding: 0%;margin: 0%">
 
             <div class="row">
-                
-                
+
+
                 <div class="col-md-3">
                     <div><img class="img-responsive" src="img/imgs_postgrado/informatica_educativa.png"/></div>
                     &nbsp;
-                   
-                    
+
+
                 </div>
-                
-              <!-- <div id="verLine1" class="col-md-1">
-                    <div class="verticalLine" style="height: 249px">&nbsp;</div>
-                </div>-->
+
+                <!-- <div id="verLine1" class="col-md-1">
+                      <div class="verticalLine" style="height: 249px">&nbsp;</div>
+                  </div>-->
 
                 <div class="col-md-5" align="left">
-                  <div><h4 class="titulo"><span style=" font-size:30px;">INFORMÁTICA EDUCATIVA</span></h4>
-                  
-                  <div><iframe src="templates/maestrias/costos-maestria.html" frameborder="0" width="530" height="200" scrolling="no"></iframe></div>
-                  
-                  <p class="parrafo">El Programa de Maestría en Informática Educativa, tiene como propósito contribuir con la consolidación y desarrollo del capital intelectual venezolano, factor clave para el fortalecimiento de su educación, y en consecuencia, del desarrollo sustentable del país.
-</p><br />
+                    <div><h4 class="titulo"><span style=" font-size:30px;">INFORMÁTICA EDUCATIVA</span></h4>
 
-                  <p style="font-weight:bold; font-size:15px;">Régimen Académico</p>
-<p class="parrafo">El programa consta de cuatro (4) períodos semestrales consecutivos. El contenido del programa estará disponible en Internet las 24 horas.</p><br />
+                        <div><iframe src="templates/maestrias/costos-maestria.html" frameborder="0" width="530" height="200" scrolling="no"></iframe></div>
 
-<p style="font-weight:bold; font-size:15px;">&nbsp;&nbsp;&nbsp;Pensum de Estudio:</p>
-                   <div class="pensum-especializacion">
-                     <iframe src="https://www.urbe.edu/Pensum/PensumView.do?idPensum=926" frameborder="0" hspace="0" vspace="0" scrolling="no"></iframe>
-	</div><br />
-                
-                
-                  </div>
-                  
-                
+                        <p class="parrafo">El Programa de Maestría en Informática Educativa, tiene como propósito contribuir con la consolidación y desarrollo del capital intelectual venezolano, factor clave para el fortalecimiento de su educación, y en consecuencia, del desarrollo sustentable del país.
+                        </p><br />
+
+                        <p style="font-weight:bold; font-size:15px;">Régimen Académico</p>
+                        <p class="parrafo">El programa consta de cuatro (4) períodos semestrales consecutivos. El contenido del programa estará disponible en Internet las 24 horas.</p><br />
+
+                        <p style="font-weight:bold; font-size:15px;">&nbsp;&nbsp;&nbsp;Pensum de Estudio:</p>
+                        <div class="pensum-especializacion">
+                            <iframe src="https://www.urbe.edu/Pensum/PensumView.do?idPensum=926" frameborder="0" hspace="0" vspace="0" scrolling="no"></iframe>
+                        </div><br />  
+                        <div layout="row" ng-if="((PlanesFinanciamiento.length > 0) && (isLogged) && (puedeInscribir === true))">
+                            <div layout="column" flex="100">
+                                <md-button class="md-raised" style="background-color:#21569f;color:white;" ng-click="goOn()">Inscribirse</md-button>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(!PlanesFinanciamiento && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Cargando...</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>La inscripción para este estudio no está disponible.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(puedeInscribir === false && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Ya está inscrito en este estudio.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(!isLogged)">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Debe iniciar sesión si desea inscribirse en este estudio.</h2>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div>
 
                 <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine" style="height: 950px">&nbsp;</div>
+                    <div class="verticalLine">&nbsp;</div>
                 </div>
 
                 <div class="col-md-2" align="center">
-                    <a href="http://www.urbeinternacional.com/#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
                 </div>
             </div>
             &nbsp;
-             &nbsp;
-              
-                  
-                </div>
-            </div>
-        
-        <!--Fin de sección-->      
+            &nbsp;
+
+
         </div>
     </div>
-   
+
+    <!--Fin de sección-->  
+
 </section>
 
