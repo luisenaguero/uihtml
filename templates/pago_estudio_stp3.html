@@ -44,7 +44,11 @@
                 </div>
 
                 <div class="col-md-6" align="left">
-                    <h1>{{Estudio.estudio}}</h1>
+                    <h1>Procesando pago e inscripción</h1>
+                    <div layout="row" layout-sm="column" layout-align="space-around">
+                        <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+                    </div>
+                    <!--<h1>{{Estudio.estudio}}</h1>
                     <br>
                     <br>
                     <div layout="row">
@@ -63,7 +67,7 @@
                     <div layout="row" style="background-color: rgb(230,230,230);" ng-repeat="PlanEstudio in Niveles[1][0].planesEstudiosCollection">
                         <div layout="row" style="background-color: rgb(242,242,242);padding:1px;border-bottom: 1px #d8d8d8 solid;" ng-repeat="Materia in PlanEstudio.materiasCollection" flex="100" ng-if="Materia.seleccionado === true">
                             <div layout="column" flex="60" style="margin:8px;text-align:left;">
-                                <!--{{Materia.idMateria}} - -->{{Materia.materia}}
+                                {{Materia.materia}}
                             </div>
                             <div layout="column" flex="30" style="margin:8px;" align="right">
                                 {{Materia.idSeccionSeleccionado.seccion}}
@@ -80,51 +84,52 @@
                         <div layout="column" flex="50" style="margin:8px;">
                             Concepto
                         </div>
-                        <!--<div layout="column" flex="30" style="margin:8px;" align="right">
-                            Fecha Vencimiento Cuota
-                        </div>-->
-                        <div layout="column" flex="40" style="margin:8px;" align="right">
-                            Monto
-                        </div>
+                    <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                        Fecha Vencimiento Cuota
+                    </div>-->
+                    <!--<div layout="column" flex="40" style="margin:8px;" align="right">
+                        Monto
                     </div>
-                    <div style="background-color: rgb(242,242,242);padding:1px;border-bottom: 1px #d8d8d8 solid;" layout="row" ng-repeat="cuota in THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection" >
-                        <div layout="column" flex="50" style="margin:8px;">
-                            {{cuota.concepto}}
-                        </div>
-                        <!--<div layout="column" flex="30" style="margin:8px;" align="right">
-                            {{cuota.fechaCobroPlan}}
-                        </div>-->
-                        <div layout="column" flex="40" style="margin:8px;" align="right">
-                            {{Moneda.nombreCorto}} {{cuota.montoCuota}}
-                        </div>
-                    </div>
-                    <br>
-                    <div layout="row" >
-                        <div layout="column" flex></div>
-                        <div layout="column" flex="50" align="center" style="font-weight: bold;">
-                            <h4>Monto Total</h4>
-                        </div>
-                        <div layout="column" flex></div>
-                    </div>
-                    <div layout="row" >
-                        <div layout="column" flex></div>
-                        <div layout="column" flex="35" align="center">
-                            <md-button class="md-raised md-primary md-hue-2" style="width:100%" ng-click="finish()">Inscribirse for good</md-button>
-                        </div>
-                        <div layout="column" flex></div>
-                    </div>
-                    <br>
                 </div>
-                <input type="hidden" ng-bind="transactionToken" id="transactionToken" value="{{transactionToken}}">
-                <div id="verLine2" class="col-md-1">
-                    <div class="verticalLine">&nbsp;</div>
+                <div style="background-color: rgb(242,242,242);padding:1px;border-bottom: 1px #d8d8d8 solid;" layout="row" ng-repeat="cuota in THEPlanFinanciamiento.detallesPlanesFinanciamientosCollection" >
+                    <div layout="column" flex="50" style="margin:8px;">
+                        {{cuota.concepto}}
+                    </div>
+                    <!--<div layout="column" flex="30" style="margin:8px;" align="right">
+                        {{cuota.fechaCobroPlan}}
+                    </div>-->
+                    <!--<div layout="column" flex="40" style="margin:8px;" align="right">
+                        {{Moneda.nombreCorto}} {{cuota.montoCuota}}
+                    </div>
                 </div>
+                <br>
+                <div layout="row" >
+                    <div layout="column" flex></div>
+                    <div layout="column" flex="50" align="center" style="font-weight: bold;">
+                        <h4>Monto Total</h4>
+                    </div>
+                    <div layout="column" flex></div>
+                </div>
+                <div layout="row" >
+                    <div layout="column" flex></div>
+                    <div layout="column" flex="35" align="center">
+                        <md-button class="md-raised md-primary md-hue-2" style="width:100%" ng-click="finish()">Inscribirse for good</md-button>
+                    </div>
+                    <div layout="column" flex></div>
+                </div>
+                <br>
+            </div>
+            <input type="hidden" ng-bind="transactionToken" id="transactionToken" value="{{transactionToken}}">
+            <div id="verLine2" class="col-md-1">
+                <div class="verticalLine">&nbsp;</div>
+            </div>
 
-                <div class="col-md-2" align="center">
-                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+            <div class="col-md-2" align="center">
+                <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+            </div>
+                    -->
                 </div>
             </div>
         </div>
-    </div>
 </section>
 

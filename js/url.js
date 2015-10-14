@@ -46,23 +46,25 @@ var URL = {
 // Nuevas URL 
 
 var dir = {
-  PERSONA:url+'people/',
-  REGISTRO_PERSONA:url+'people/newPeopleInter',
-  MODIFICAR_PERSONA:url+'people/updatePeople',
-  DATOS_PERSONALES:url+'people/list',
-  DATOS_CAMBIAR_FOTO:url+'people/list',
-  LOG:{
-      IN:url+'auth/loginInter'
-  },
-  CUENTA:{
-    VERIFICAR:url+'people/verifyEmail',
-    REENVIARCODIGO:url+'people/sendCode'
-  },
-  EDIT_PROFILE: url+'people/',
-  ESTUDIO:{
-      PERSONA_REGISTRO_ACADEMICO:url+'payment/inscripciones/persona/',
-      PERSONA_ESTUDIO_ELEGIDO:'payment/study-all/'
-  }
+    PERSONA: url + 'people/',
+    REGISTRO_PERSONA: url + 'people/newPeopleInter',
+    MODIFICAR_PERSONA: url + 'people/updatePeople',
+    DATOS_PERSONALES: url + 'people/list',
+    DATOS_CAMBIAR_FOTO: url + 'people/list',
+    LOG: {
+        IN: url + 'auth/loginInter'
+    },
+    CUENTA: {
+        VERIFICAR: url + 'people/verifyEmail',
+        REENVIARCODIGO: url + 'people/sendCode'
+    },
+    EDIT_PROFILE: url + 'people/',
+    ESTUDIO: {
+        PERSONA_REGISTRO_ACADEMICO: url + 'payment/inscripciones/persona/',
+        ESTUDIO_INFO: url + 'study/:studyID',
+        ESTUDIO_ALL: url+ 'payment/study-all/:studyID',
+        PERSONA_ESTUDIO_ELEGIDO: 'payment/study-all/'
+    }
 };
 
 

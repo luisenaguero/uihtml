@@ -46,6 +46,11 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/inicio.html',
                     controller: ''
                 })
+                .when('/estudio', {
+                    templateUrl: 'templates/estudio.html',
+                    controller: 'ctrlEstudio'
+
+                })
                 .when('/certificacion', {
                     templateUrl: 'templates/certificacion.html',
                     controller: 'ctrlCertificacion'
@@ -81,6 +86,10 @@ app.config(['$routeProvider',
                 .when('/pago_estudio_stp3', {
                     templateUrl: 'templates/pago_estudio_stp3.html',
                     controller: 'ctrlPagoEstudio_stp3'
+                })
+                .when('/pago_estudio_cancelado', {
+                    templateUrl: 'templates/inicio.html',
+                    controller: 'ctrlPagoEstudio_cancelado'
                 })
                 .when('/estudios', {
                     templateUrl: 'templates/estudios.html',

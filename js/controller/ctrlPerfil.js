@@ -50,7 +50,6 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
             url: dir.DATOS_PERSONALES,
             headers: {'entity': 'estado_civil', 'X-Authorization': AuthSession.getUserToken()}
         }).success(function (data) {
-            console.log(data);
             $scope.estados = data;
         });
 
@@ -96,15 +95,14 @@ app.controller('ctrlPerfil', function (personaService, $window, $scope, AuthSess
                 case 'png':
                     var fd = new FormData();
                     fd.append("file", files[0]);
-                    personaService.cambiarFoto((fd, $scope.persona.id), function (response) {
-                        console.log(response);
-                        $window.location.reload();
+//                    personaService.cambiarFoto((fd, $scope.persona.id), function (response) {
+//                        console.log(response);
+//                        $window.location.reload();
+//                    });
+                    $http.post('https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people/storeImage/'+$scope.persona.id, 
+                    fd,{
+                        headers: {'Content-Type': undefined}
                     });
-                    //            $http.post(uploadUrl, {fd, $scope.persona.id}, {
-                    //            withCredentials: true,
-                    //                    headers: {'Content-Type': undefined },
-                    //                    transformRequest: angular.identity
-                    //            });
                     break;
                 default:
                     $(this).val('');

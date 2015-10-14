@@ -49,7 +49,7 @@ app.factory("personaService", function ($resource, AuthSession) {
         },
         cambiarFoto: {
             method: 'POST',
-            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people/storeImage'
+            url: 'https://api.urbeinternacional.com:8181/urbe-int-api/rest/1.0/people/storeImage',
         },
         solicitudPais: {
             method: 'GET',
@@ -94,6 +94,27 @@ app.factory("personaService", function ($resource, AuthSession) {
 //        }
 //    };
 //});
+
+app.factory("estudioService", function ($resource) {
+    return {
+        estudioInfo: function (estudioID) {
+            return $resource(dir.ESTUDIO.ESTUDIO_ALL, {studyID:estudioID}, {
+                get: {
+                    method: 'GET',
+                    isArray: false
+                }
+            });
+        },
+        estudioSoloInfo: function (estudioID) {
+            return $resource(dir.ESTUDIO.ESTUDIO_INFO, {studyID:estudioID}, {
+                get: {
+                    method: 'GET',
+                    isArray: false
+                }
+            });
+        }
+    };
+});
 
 app.factory("cuentaService", function ($resource) {
     return {

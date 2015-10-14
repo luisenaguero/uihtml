@@ -337,3 +337,71 @@ body {
     overflow: hidden;
     transition: box-shadow .4s cubic-bezier(.25,.8,.25,1),background-color .4s cubic-bezier(.25,.8,.25,1);
 }
+
+.th_table{
+    background-color:#21569f;
+    color:#FFF; 
+    font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;		
+}
+
+.td_table{
+    font-family:Arial, Helvetica, sans-serif;		
+    font-size:12px;
+    color:#000;	
+
+}
+.tabla-estudio {
+    border: #FFF;
+    width: 100%
+}
+
+.fluid-css {
+    padding: 0%;
+    margin: 0%
+}
+
+.titulo-estudio {
+    font-size:25px;
+}
+
+.financiamiento-estudio {
+    font-size:17px; 
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.invercion-estudio {
+    font-size:13px
+}
+
+.parrafo-estudio {
+    font-weight:bold; 
+    font-size:15px;
+}
+
+.boton-inscribir {
+    background-color:#21569f !important;
+    color:white !important;
+}
+
+.sin-padding {
+    padding: 0px !important;
+}
+
+.materias {
+    margin:2px;
+    text-align:left;
+}
+
+.plan-estudio {
+    background-color: rgb(230,230,230);
+}
+
+.materia {
+    background-color: rgb(242,242,242);
+    border-bottom: 1px #d8d8d8 solid;
+}
+
+.cargando {
+    padding-bottom: 2%
+}

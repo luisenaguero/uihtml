@@ -1,0 +1,179 @@
+
+<!--Separador-Negro-->
+
+<div class="container-fluid fluid-css">
+    <div class="separador-negro">&nbsp;
+    </div>
+</div>
+
+<!--Imagen Front-->
+<section>
+    <div class="container-fluid fluid-css">
+        <img class="img-responsive" src="img/img_diplomado/diplomado.png" alt="Front-URBE">
+    </div>
+</section>
+<!--Separador-rayado blanco-->
+
+<div class="container-fluid fluid-css">
+    <div class="separador-rayado-blanco">&nbsp;
+    </div>
+</div>
+<!--Separador Blanco-->
+<div class="container-fluid fluid-css">
+    <div class="separador-blanco">&nbsp;
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<section>
+    <!--Separador Blanco-->
+    <div ng-show="!cargandoInfo" align="center" class="cargando" layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-diameter="90" md-mode="indeterminate"></md-progress-circular>
+    </div>
+
+    <div ng-show="cargandoInfo" class="container-fluid fluid-css">
+        <div class="separador-blanco">&nbsp;
+        </div>
+
+        <div id="principal" class="container-fluid fluid-css">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div><img class="img-responsive" src="img/img_diplomado/gerencia_financiera.png"/></div>
+                    &nbsp;
+                </div>
+
+                <div class="col-md-5" align="left">
+                    <div>
+                        <h4 ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))" class="titulo"><span class="titulo-estudio">{{estudioInfo.tipo_estudio.estudio.estudio}}</span></h4>
+                        <h4 ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))" class="titulo"><span class="titulo-estudio">{{estudioInfo.estudio}}</span></h4>
+
+                        <div ng-if="((PlanesFinanciamiento.length > 0) && (isLogged) && (puedeInscribir === true))" class="row">
+                            <p class="financiamiento-estudio"> 
+                                <strong>Financiamiento<br/></strong>
+                                <span class="invercion-estudio">
+                                    <strong><br/>
+                                        Inversión Total: $ {{estudioInfo.tipo_estudio.estudio.valor_uc.planes_financiamiento[0].costoTotal}}<br/>
+                                        Valor UC: $ {{estudioInfo.tipo_estudio.estudio.valor_uc.valorUc}}
+                                    </strong>
+                                </span>
+                            </p>
+                        </div>
+                        <div ng-if="((PlanesFinanciamiento.length > 0) && (isLogged) && (puedeInscribir === true))" class="row">
+                            <table class="table tabla-estudio" border="1">
+                                <tr>
+                                    <th width="70" class="th_table"><div align="center">Período</div></th>
+                                <th width="63" class="th_table"><div align="center">Duración / UC</div></th>
+                                <th width="51" class="th_table"><div align="center">Inicial</div></th>
+                                <th ng-repeat="i in cuotas" width="67" class="th_table"><div align="center">Cuota {{i + 1}}</div></th>
+
+                                </tr>
+
+                                <tr>
+                                    <td height="20" class="td_table"><div align="center">1er. Semestre</div></td>
+                                    <td class="td_table"><div align="center">200h / 25</div></td>
+                                    <td class="td_table">${{estudioInfo.tipo_estudio.estudio.valor_uc.planes_financiamiento[0].montoInicial}}</td>
+                                    <td ng-repeat="i in cuotas" class="td_table"><div align="center">${{estudioInfo.tipo_estudio.estudio.valor_uc.planes_financiamiento[0].montoCuota}}</div></td>
+                                </tr>
+                            </table> 
+                        </div>
+
+                        <div class="row">
+                            <p class="parrafo-estudio">Objetivo general: </p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.objetivoGeneral}}</p><br/>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.objetivoGeneral}}</p><br/>
+
+                            <p class="parrafo-estudio">Dirigido a:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.dirigidoA}}</p><br/>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.dirigidoA}}</p><br/>
+
+                            <p class="parrafo-estudio">Plan de estudio:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.planEstudio}}</p><br />
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.planEstudio}}</p><br/>
+
+                            <p class="parrafo-estudio">Horario:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.horario}}</p><br/>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.horario}}</p><br/>
+
+                            <p class="parrafo-estudio">Duración:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.duracion}}</p><br/>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.duracion}}</p><br/>
+
+                            <p class="parrafo-estudio">Requisitos de egreso:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.requisitoEgreso}}</p><br/>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.requisitoEgreso}}</p><br/>
+
+                            <p class="parrafo-estudio">Diploma que se otorga:</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length > 0 && (isLogged))">{{estudioInfo.tipo_estudio.estudio.tituloOtorga}}</p>
+                            <p class="parrafo" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">{{estudioInfo.tituloOtorga}}</p><br/>
+                            <p class="parrafo">&nbsp;</p>
+                        </div>
+
+                        <div class="row">
+                            <p class="parrafo-estudio">Módulos:</p>
+                            <div class="col-md-6 sin-padding" ng-repeat="Nivel in Niveles" ng-if="!$first">
+                                <table class="table tabla-estudio" border="1">
+                                    <tr><td class="th_table"><div align="center"><h4>Periodo {{Nivel[0].nivel}}</h4></div></td></tr>
+                                    <tr>
+                                        <td class="sin-padding">
+                                            <div layout="row" class="plan-estudio" ng-repeat="PlanEstudio in Nivel[0].planesEstudiosCollection">
+                                                <div layout="row" class="materia" ng-repeat="Materia in PlanEstudio.materiasCollection" flex="100">
+                                                    <div  class="materias">{{Materia.materia}}</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table> 
+                            </div>
+                        </div>
+
+                        <div layout="row" ng-if="((PlanesFinanciamiento.length > 0) && (isLogged) && (puedeInscribir === true))">
+                            <div layout="column" flex="100">
+                                <md-button class="md-raised boton-inscribir" ng-click="goOn()">Inscribirse</md-button>
+                            </div>
+                        </div>
+
+                        <div layout="row" ng-show="(!PlanesFinanciamiento && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Cargando...</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(PlanesFinanciamiento.length === 0 && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>La inscripción para este estudio no está disponible.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(puedeInscribir === false && (isLogged))">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Ya está inscrito en este estudio.</h2>
+                            </div>
+                        </div>
+                        <div layout="row" ng-show="(!isLogged)">
+                            <div layout="column" flex="100" align="center">
+                                <h2>Debe iniciar sesión si desea inscribirse en este estudio.</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                    &nbsp;
+
+                </div>
+
+                <div id="verLine2" class="col-md-1">
+                    <div class="verticalLine">&nbsp;</div>
+                </div>
+
+                <div class="col-md-2" align="center">
+                    <a href="#/modelo-educativo"><img class="img-responsive" src="img/img_diplomado/cert-internacional_03.png" alt="Front-URBE"></a>
+                </div>
+            </div>
+            &nbsp;
+            &nbsp;
+
+        </div>
+    </div>
+
+    <!--Fin de sección-->
+</section>
+
