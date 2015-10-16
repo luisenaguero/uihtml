@@ -270,7 +270,7 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
             //MARGEN IZQUIERDO DE LA BARRA 
             var marginLeftNav = windowSize - $(myNavbar).width();
 
-            if ($(window).width() > 900) {
+            if ($(window).width() > 770) {
                 $("#opcSup").css("margin-left", marginLeftNav - 68);
                 $("#myNavbar").css("float", "right");
                 $("#formL").css("float", "right");
@@ -315,10 +315,14 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
 
                 $(logo).css("margin-left", logoMarginLeft);
                 espacioTotalLogo = $(logo).width() + logoMarginLeft;
-            }
+            }            
         };
 
         $(window).resize(function () {
+            changeMargins();
+        });
+        
+         $(window).hover(function () {
             changeMargins();
         });
 

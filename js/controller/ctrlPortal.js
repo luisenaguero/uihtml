@@ -22,7 +22,7 @@ app.controller('ctrlPortal',
             $(document).ready(function () {
 
                 //CAMBIO EL MARGEN DE LOS ELEMENTOS PARA DAR UN EFECTO RESPONSIVE
-
+/*
 
 
                 !function (d, s, id) {
@@ -102,7 +102,7 @@ app.controller('ctrlPortal',
                         $("#myNavbar").css("float", "right");
                     }
                     changeMargins();
-                });
+                });*/
             });
 
 

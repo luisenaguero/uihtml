@@ -3,65 +3,85 @@
     </div>
 </a>
 
-<div class="container-fluid" ng-controller="SecurityController" >
 
-    <div class="collapse navbar-collapse">
-        <div class="login" id="login" >
-            <div class="formulario-login" ng-show="!profile">
-                <form ng-submit="login()" id="frmLogin" class="navbar-form navbar-right" novalidate>
-                    <div class="form-group">
-                        <input  name="user" requiered ng-model="user" type="text" class="mainLoginInput form-control entrada" placeholder="&#xf007;   Usuario">
-                        <input name="psw" type="password" required ng-model="password" class="form-control entrada"
-                               placeholder="&#xf023;   Contraseña">
-                        <button type="submit" class="btn btn-default">></button>
-                    </div>
-                </form>
+
+<div style="width:398px; height: 100%;display:inline-block" ng-if="profile === true">
+    <!--                <center>
+                        <div>
+                            <button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button>
+                            <a style="float:right; margin-left:10px;margin-top: 15px;" ng-href="#/perfil" class="btn btn-default">Ver Perfil</a>
+                            <div class="logged">
+                                <span style="margin-top: 5px;">{{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</span>
+                            </div>
+                        </div>  
+                    </center>                -->
+    <a ng-href="#/inicio.html"><button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button></a>
+    <a ng-href="#/perfil">
+        <div class="logged">
+            <h5 style="margin-top: 6%;"><i style="margin-right: 1%; margin-left: 1%" class="fa fa-user"></i>   {{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</h5>                
+        </div>
+    </a>
+</div>
+
+
+
+<nav class="navbar navbar-default" style="margin-bottom:0px; position:inherit" id="supNav">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#test">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+        </div>
+    </div>  
+
+    <div class="collapse navbar-collapse" id="test" ng-controller="SecurityController">
+        <div class="opciones-superiores" id="opcSup">
+            <ul style="padding-bottom: 5px" id="login">
+                <li><a href="#/nosotros">NOSOTROS&nbsp;&nbsp;|</a></li>                    
+                <li><a href="#/estudios">ESTUDIOS&nbsp;&nbsp;|</a></li>
+                <li><a href="#/soporte">SOPORTE</a></li>
+            </ul>
+        </div>
+
+        <div class="formLogin" id="formL">
+            <div class="boxLogin" ng-show="!profile">
+                <form ng-submit="login()" id="frmLogin" novalidate style="display:inline-block !important" ng-show="!profile">
+
+                    <ul style="display: flex; list-style: none; padding: 0">
+                        <li>
+                            <input  name="user" requiered ng-model="user" type="text" style="margin-left: 5px" class="mainLoginInput form-control entrada" placeholder="&#xf007;   Usuario">  
+                        </li>
+                        <li>
+                            <input name="psw" type="password" required ng-model="password" style="margin-left: 5px" class="form-control entrada"
+                                   placeholder="&#xf023;   Contraseña">
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn-default" style="margin-left: 5px">></button>
+                        </li>
+                    </ul>                  
+                </form> 
             </div>
-            <div class="login-options" ng-show="!profile" >
+            <div class="login-options" ng-show="!profile">
                 <ul>
                     <li><a ng-href="#/registro">Registro</a></li>
                     |
                     <li ng-click="showAdvanced($event)"><a>Recuperar Contraeña</a></li>
                 </ul>
             </div>
-            <div style="width:398px; height: 100%;display:inline-block" ng-if="profile === true">
-                <!--                <center>
-                                    <div>
-                                        <button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button>
-                                        <a style="float:right; margin-left:10px;margin-top: 15px;" ng-href="#/perfil" class="btn btn-default">Ver Perfil</a>
-                                        <div class="logged">
-                                            <span style="margin-top: 5px;">{{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</span>
-                                        </div>
-                                    </div>  
-                                </center>                -->
+            <div style="margin-top:10px; height: 100%;display:inline-block" ng-if="profile === true">
                 <a ng-href="#/inicio.html"><button style="float:right; margin-left:10px;margin-top: 15px;" ng-click="logout()" type="button" class="btn btn-default">x</button></a>
                 <a ng-href="#/perfil">
-                    <div class="logged">
-                        <h5 style="margin-top: 6%;"><i style="margin-right: 1%; margin-left: 1%" class="fa fa-user"></i>   {{profileData.primerNombre}} {{profileData.segundoNombre}} {{profileData.primerApellido}} {{profileData.segundoApellido}}</h5>                
+                    <div class="logged" style="width:70%">
+                        <h5 style="margin-top: 14px;"><i style="margin-right: 1%; margin-left: 1%" class="fa fa-user"></i>   {{profileData.primerNombre}} {{profileData.primerApellido}} </h5>                
                     </div>
                 </a>
             </div>
-
-            <div class="ead" >
-                <a ng-if="moodleData.servers.length > 0"href="https://urbe-api.urbe.edu/urbe-api-ext/MoodleProxy?id={{profileData.id}}&server={{moodleData.servers[0].serverId}}">Tiene EAD</a>
-                <span ng-if="moodleData.servers.length < 1">No tiene EAD</span>
-
-            </div>
-            <div class="ead-m">
-                <span ng-if="moodleData.isDebStudent === !false">Cuota Pendiente</span>
-            </div>
-        </div>
-
-
-        <div class="opciones-superiores" id="opcSup">
-            <ul>
-                <li><a href="#/nosotros">NOSOTROS&nbsp;&nbsp;|</a></li>                    
-                <li><a href="#/estudios">ESTUDIOS&nbsp;&nbsp;|</a></li>
-                <li><a href="#/soporte">SOPORTE</a></li>
-            </ul>
         </div>
     </div>
-</div>
+</nav>
+
 
 <!--Navbar-->
 <nav class="navbar navbar-default" style="margin-bottom: 0%;border-radius: 0%; background-color: white;position: inherit;border-color: none;border: none;">
@@ -74,7 +94,7 @@
             </button>
             <!--  <a class="navbar-brand" href="#">URBE INT</a> -->
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar" style="float:right" >
+        <div class="collapse navbar-collapse" id="myNavbar" style="float:right" align="center" >
             <ul class="nav navbar-nav">
                 <li><a href="#/formacion-personal"><p class="header-options-2">FORMACIÓN PERSONAL</p></a></li>
                 <li><a href="#/postgrado"><p class="header-options-2">POSTGRADO</p></a></li>
@@ -90,4 +110,3 @@
         </div>
     </div>
 </nav>
-
