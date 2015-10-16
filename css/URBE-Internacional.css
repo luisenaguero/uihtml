@@ -323,20 +323,33 @@ body {
     font-size: 11px;
 }
 
+.formLogin{
+    display:inline-block;
+    padding-right: 15px;
+    padding-bottom: 10px
+}
+
+.boxLogin{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: 50px;
+}
+
 .login-options {    
-    margin-left: 8px;
-    margin-top: 4px;
-    padding: 2px 5px 0px 5px;
-    position: absolute;
-    top: 34px;
-    left: 0px;
-    padding: 5px;
-    /*margin-top: 21px;*/
+    /*  margin-left: 8px;
+      margin-top: 4px;
+      padding: 2px 5px 0px 5px;
+      top: 34px;
+      left: 0px;
+      height:20px;
+      padding: 5px;
+      /*margin-top: 21px;*/
     /*	background-color: rgba(0, 0, 0, 0.3);
             -moz-border-radius: 5px 5px 0px 0px;
             -webkit-border-radius: 5px 5px 0px 0px;
             border-radius: 5px 5px 0px 0px;*/    
     font-size: 10px;
+    float:left !important;
 }
 .login-options ul {    
     padding: 0px;
@@ -359,8 +372,13 @@ body {
 .opciones-superiores{
     display:inline-block;
     height: 62px;
-    float: right;
-    margin-right:15%;
+    // float: right;
+    //margin-right:15%;
+}
+
+#opcSup{
+    margin-left:0px;
+    margin-top:10px;
 }
 
 .opciones-superiores ul{
@@ -419,7 +437,7 @@ a,p,a:hover {
 }
 .ead {
     /* border: 1px solid; */
-    
+
     width: 106px;
     margin-top: -44px;
     margin-left: 86px;
@@ -428,7 +446,7 @@ a,p,a:hover {
 }
 .ead-m{
     /* border: 1px solid; */
-    
+
     width: 132px;
     margin-top: -21px;
     margin-left: -37px;
@@ -442,7 +460,7 @@ a,p,a:hover {
     text-align: center;
 }
 .mainLoginInput::-moz-placeholder {
-   font-family: "Montserrat", Arial, Helvetica, sans-serif;  
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;  
 }
 
 .separacion {
