@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-app.controller('SecurityController', function ($scope, $http, SecurityService, AuthSession, $mdDialog, userLogin,$rootScope) {
+app.controller('SecurityController', function ($scope, $http, SecurityService, AuthSession, $mdDialog, userLogin, $rootScope) {
 
     $scope.profile = AuthSession.isLogged();
     //console.log("AuthSession: " + $scope.profile);
@@ -33,14 +33,14 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
         else {
             //by Eddie Master
             userLogin.servicio($scope.user, $scope.password).ejecutar(function (success) {
-                
+
 //                switch (success.correoVerificado) {
 //                    case true:
 //                        console.log("es verdadero");
-                        Security.people = success;
-                        $scope.profileData = success;
-                        Security.session = AuthSession.isLogged();
-                        $scope.profile = AuthSession.isLogged();
+                Security.people = success;
+                $scope.profileData = success;
+                Security.session = AuthSession.isLogged();
+                $scope.profile = AuthSession.isLogged();
 //                        break;
 //                    case false:
 //                        console.log("Correo no verificado");
@@ -270,6 +270,31 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
             //MARGEN IZQUIERDO DE LA BARRA 
             var marginLeftNav = windowSize - $(myNavbar).width();
 
+            if ($(window).width() > 900) {
+                $("#opcSup").css("margin-left", marginLeftNav - 68);
+                $("#myNavbar").css("float", "right");
+                $("#formL").css("float", "right");
+                $("#supNav").css("text-align", "inherit");
+
+            } else {
+                $("#opcSup").css("margin-left", 0);
+                $("#myNavbar").css("float", "none");
+                $("#formL").css("float", "inherit");
+                $("#supNav").css("text-align", "center");
+            }
+
+
+
+            // SI EL MARGEN IZQUIERDO DEL NAVBAR ES MENOR QUE EL TAMAÑO 
+            // DE LA BANDERA, LA OCULTO
+
+            if ((marginLeftNav < $("#logo").width() + 40)
+                    || $(window).width() < 1000) {
+                $("#logo").css("display", "none");
+            } else {
+                $("#logo").css("display", "inline-block");
+            }
+
             // SI EL NAVBAR SE ACERCA LE REDUZCO EL MARGINLEFT AL LOGO
             while (marginLeftNav - espacioTotalLogo < 50) {
 
@@ -291,42 +316,13 @@ app.controller('SecurityController', function ($scope, $http, SecurityService, A
                 $(logo).css("margin-left", logoMarginLeft);
                 espacioTotalLogo = $(logo).width() + logoMarginLeft;
             }
-
-            // MARGIN RIGHT DE LAS OPCIONES SUPERIORES
-
-            var opcSupMarginRight = parseInt(($(opcSup).css('margin-right')).replace("px", ""));
-            var sumaTopDiv = (opcSupMarginRight + $(opcSup).width() + $(login).width());
-
-            while ((windowSize - 150 <= sumaTopDiv)
-                    || espacioTotalLogo >= windowSize - sumaTopDiv
-                    ) {
-                opcSupMarginRight--;
-                $(opcSup).css("margin-right", opcSupMarginRight);
-                sumaTopDiv = (opcSupMarginRight + $(opcSup).width() + $(login).width());
-            }
-
-            while (($(login).width() + $(opcSup).width() + opcSupMarginRight) < $(myNavbar).width()) {
-                opcSupMarginRight++;
-                $(opcSup).css("margin-right", opcSupMarginRight);
-            }
         };
 
-        changeMargins();
-
         $(window).resize(function () {
-
-            var windowSize = $(window).width();
-
-            if (windowSize < 1050) {
-                $("#logo").css("display", "none");
-                $("#myNavbar").css("float", "none");
-
-            } else {
-                $("#logo").css("display", "inline-block");
-                $("#myNavbar").css("float", "right");
-            }
             changeMargins();
         });
+
+        changeMargins();
     });
 
 
